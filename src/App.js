@@ -1,12 +1,13 @@
 import './App.css';
-import HomePage from './HomePage';
-import NavBar from './NavBar/NavBar';
+
+import LoginPage from './Pages/LoginPage/LoginPage';
 
 const App = () => {
   return (
-    <NavBar />
+    <LoginPage/>
   );
 };
+
 
 export default App;
 
