@@ -9,7 +9,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const HomePage = () => {
     const [showMediaIcons, setShowMediaIcons] = useState(false);
     return (
         <>
@@ -29,13 +29,13 @@ const Navbar = () => {
                     }>
                     <ul>
                         <li>
-                            <NavLink to="/">About Us</NavLink>
+                            <NavLink to="/aboutus">About Us</NavLink>
                         </li>
                         <li>
                             <NavLink to="#">Filter by</NavLink>
                         </li>
                         <li>
-                            <NavLink to="#">FAQs</NavLink>
+                            <NavLink to="/faq">FAQs</NavLink>
                         </li>
                         <li>
                             <NavLink to="#">Add</NavLink>
@@ -84,4 +84,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default HomePage;

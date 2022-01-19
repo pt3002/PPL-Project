@@ -25,7 +25,6 @@ const userSchema = new mongoose.Schema({
 //Model creation(2)
 const User = new mongoose.model("User",userSchema)
 
-
 //Routes
 app.post("/login",(req, res)=>{
     const{ email, password } = req.body 

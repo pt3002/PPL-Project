@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from './Pages/HomePage/HomePage';
 import SignUpPage from './Pages/Sign-UpPage/SignUpPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
+import FAQ from './Pages/FAQ/FAQ';
+import AboutUs from './Pages/AboutUs/AboutUs';
 
 const App = () => {
 
@@ -25,6 +27,12 @@ const App = () => {
           </Route>
           <Route path="/signup">
             <SignUpPage />
+          </Route>
+          <Route path="/faq">
+            <FAQ />
+          </Route>
+          <Route path="/aboutus">
+            <AboutUs />
           </Route>
         </Switch>
       </Router>
