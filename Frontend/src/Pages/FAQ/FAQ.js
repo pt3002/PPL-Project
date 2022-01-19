@@ -79,7 +79,7 @@ const FAQ = () => {
             </nav>
 
             {/* hero section  */}
-            <h1>FAQ Page</h1>
+            <h1>FAQ Page...</h1>
         </>
 
     )
