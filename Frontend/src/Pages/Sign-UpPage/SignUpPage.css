@@ -1,3 +1,39 @@
-.signup .button{
-    background-color: cornflowerblue;
+.signup{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url("./signup.jpg") ;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
 }
+.signupHeading{
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    /* text-shadow: 1px 1px 0.2px #32CD32, 0 0 1em rgb(21, 255, 0), 0 0 0.2em #2E8B57; */
+}
+
+.inputClass{
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    padding: 0.3rem 4rem;
+}
+
+button{
+    padding: 0.7rem 2.5rem;
+    border-radius: 12px;
+    margin: 0.5rem;
+    color: #fff;
+    background-color: black;
+}
+
+.divOR{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
