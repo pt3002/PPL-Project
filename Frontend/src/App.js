@@ -7,7 +7,7 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 const App = () => {
   return (
     <div className="App">
-      <SignUpPage />
+      <LoginPage />
     </div>
   );
 };
