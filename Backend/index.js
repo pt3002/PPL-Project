@@ -15,15 +15,48 @@ mongoose.connect("mongodb://localhost:27017/PPL_backend",{
 })
 //PPL_backend is name of database
 
+//Schema creation(1)
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String
+})
+
+//Model creation(2)
+const User = new mongoose.model("User",userSchema)
+
+
 //Routes
 app.post("/login",(req, res)=>{
     res.send("MY API login")
 })
 
 app.post("/signup",(req, res)=>{
-    res.send("MY API signup")
+    const{ name, email, password } = req.body
+    User.findOne({email: email},(err,user)=>{
+        if(user){
+            res.send({message:"User aleady registered"})
+        }
+        else{
+            const user = new User({
+                name,
+                email,
+                password
+            })
+            user.save( err=> {
+                if(err){
+                    res.send(err)
+                }
+                else{
+                    res.send({ message:"Successfully Signed in!!"})
+                }
+            })
+        }
+    })
+    
 })
 
 app.listen(9002,()=>{
     console.log("BE started at port 9002")
 })
+
