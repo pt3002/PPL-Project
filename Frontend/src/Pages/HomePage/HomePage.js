@@ -1,14 +1,90 @@
-import React from 'react';
+import React, { useState } from "react";
+import "./HomePage.css";
+import {
+    FaFacebookSquare,
+    FaInstagramSquare,
+    FaYoutubeSquare,
+} from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-import './HomePage.css';
+import { NavLink } from "react-router-dom";
 
-const HomePage = ({setLoginUser}) => {
+const Navbar = () => {
+    const [showMediaIcons, setShowMediaIcons] = useState(false);
     return (
-        <div className="homepage">
-            <h1>Hello homepage</h1>
-            <div className="button" onClick={() => setLoginUser({})}>Logout</div>
-        </div>
+        <>
+            <nav className="main-nav">
+                {/* 1st logo part  */}
+                <div className="logo">
+                    <h2>
+                        <span>T</span>ravel
+                        <span>G</span>uide
+                    </h2>
+                </div>
+
+                {/* 2nd menu part  */}
+                <div
+                    className={
+                        showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
+                    }>
+                    <ul>
+                        <li>
+                            <NavLink to="/">About Us</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="#">Filter by</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="#">FAQs</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="#">Add</NavLink>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* 3rd social media links */}
+                <div className="social-media">
+                    <ul className="social-media-desktop">
+                        <li>
+                            <a
+                                href="#"
+                                target="##">
+                                <FaFacebookSquare className="facebook" />
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/thapatechnical/"
+                                target="#">
+                                <FaInstagramSquare className="instagram" />
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
+                                target="#">
+                                <FaYoutubeSquare className="youtube" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    {/* hamburget menu start  */}
+                    <div className="hamburger-menu">
+                        <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+                            <GiHamburgerMenu />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            {/* hero section  */}
+            {/* <section className="hero-section">
+        <p>Welcome to </p>
+        <h1>Thapa Technical</h1>
+      </section> */}
+        </>
     );
 };
 
-export default HomePage;
+export default Navbar;
