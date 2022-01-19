@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 import './SignUpPage.css';
 
 const SignUpPage = () => {
+
+    const history = useHistory()
+
     const [user,setUser]=useState({
         name:"",
         email:"",
@@ -23,7 +27,8 @@ const SignUpPage = () => {
         const { name,email,password,reEnterpassword } = user
         if( name && email && password && (password===reEnterpassword)){
             axios.post("http://localhost:9002/signup",user)
-            .then( res=> console.log(res))
+            .then( res=> alert(res.data.message))
+            history.push("/login")
         }
         else{
             alert("Invalid input")
@@ -40,7 +45,7 @@ const SignUpPage = () => {
             <input type="password" name="reEnterpassword" value={user.reEnterpassword} placeholder='Re-enter password' onChange={ handleChange }></input>
             <div className="button" onClick={signup_api}>Signup</div>
             <div>or</div>
-            <div className="button">Login</div>
+            <div className="button" onClick={()=>history.push("/login")}>Login</div>
         </div>
     );
 };

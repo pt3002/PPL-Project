@@ -1,9 +1,13 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 import './LoginPage.css';
 
-const LoginPage = () => {
+const LoginPage = ({setLoginUser}) => {
+
+    const history = useHistory()
+
     const [user,setUser]=useState({
         email:"",
         password:""
@@ -19,7 +23,10 @@ const LoginPage = () => {
 
     const login_api = () => {
         axios.post("http://localhost:9002/login",user)
-        .then(res => console.log(res))
+            .then(res => {alert(res.data.message)
+            setLoginUser(res.data.user)
+            history.push("/")
+        })
     }
 
     return (
@@ -29,7 +36,7 @@ const LoginPage = () => {
             <input type="password" name="password" value={user.password} placeholder='Enter your password' onChange={ handleChange }></input>
             <div className="button" onClick={login_api}>Login</div>
             <div>or</div>
-            <div className="button">Signup</div>
+            <div className="button" onClick={()=>history.push("/signup")}>Signup</div>
         </div>
     );
 };

@@ -61,7 +61,7 @@ app.post("/signup",(req, res)=>{
                     res.send(err)
                 }
                 else{
-                    res.send({ message:"Successfully Signed in!!"})
+                    res.send({ message:"Successfully Signed in, Please login!!"})
                 }
             })
         }
