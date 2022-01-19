@@ -4,7 +4,10 @@ import './HomePage.css';
 
 const HomePage = () => {
     return (
-        <h1>HomePage Works!</h1>
+        <div className="homepage">
+            <h1>Hello homepage</h1>
+            <div className="button">Logout</div>
+        </div>
     );
 };
 

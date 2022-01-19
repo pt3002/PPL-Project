@@ -1,10 +1,14 @@
 import './App.css';
 
+import HomePage from './Pages/HomePage/HomePage';
+import SignUpPage from './Pages/Sign-UpPage/SignUpPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
 
 const App = () => {
   return (
-    <LoginPage/>
+    <div className="App">
+      <LoginPage />
+    </div>
   );
 };
 
