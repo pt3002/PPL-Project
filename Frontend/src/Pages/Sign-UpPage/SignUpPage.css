@@ -21,6 +21,7 @@
     margin-bottom: 1rem;
     border-radius: 6px;
     padding: 0.7rem 10rem;
+    
 }
 
 button{
@@ -29,6 +30,7 @@ button{
     margin: 0.5rem;
     color: #fff;
     background-color: black;
+    cursor: pointer;
 }
 
 .divOR{
