@@ -4,10 +4,16 @@ import "./AboutUs.css";
 import HomePage from "../HomePage/HomePage";
 
 const AboutUs = () => {
-    return(
-        <div>
-            <HomePage />
-            <h1>About us</h1>
+    return (
+
+        <div className="aboutdiv">
+
+            <div>
+                <HomePage />
+            </div>
+            <div>
+                <h1>About US</h1>
+            </div>
 
         </div>
     );

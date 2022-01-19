@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 
-import "./FAQ.css";
+import "./AddPlaceForm.css";
 import HomePage from "../HomePage/HomePage";
 
-const FAQ = () => {
+const AddPlaceForm = () => {
     return (
-        <div className="faqdiv">
+
+        <div className="addplace">
+
             <div>
                 <HomePage />
             </div>
             <div>
-                <h1>FAQ</h1>
+                <h1>Form for adding places!</h1>
             </div>
-        </div >
+
+        </div>
     );
 }
 
-export default FAQ;
+export default AddPlaceForm;

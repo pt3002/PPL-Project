@@ -38,7 +38,7 @@ const HomePage = () => {
                             <NavLink to="/faq">FAQs</NavLink>
                         </li>
                         <li>
-                            <NavLink to="#">Add</NavLink>
+                            <NavLink to="/addplace">Add</NavLink>
                         </li>
                     </ul>
                 </div>

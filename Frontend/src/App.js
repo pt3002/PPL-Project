@@ -1,6 +1,6 @@
 import './App.css';
-import {useState} from 'react';
-import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import HomePage from './Pages/HomePage/HomePage';
 import SignUpPage from './Pages/Sign-UpPage/SignUpPage';
@@ -8,10 +8,11 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import FAQ from './Pages/FAQ/FAQ';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import WelcomePage from './Pages/WelcomePage/WelcomePage';
+import AddPlaceForm from './Pages/AddPlaceForm/AddPlaceForm';
 
 const App = () => {
 
-  const[ user, setLoginUser] =useState({})
+  const [user, setLoginUser] = useState({})
 
   return (
     <div className="App">
@@ -23,8 +24,8 @@ const App = () => {
             }
           </Route>
           <Route path="/login">
-            <LoginPage 
-            setLoginUser={setLoginUser}/>
+            <LoginPage
+              setLoginUser={setLoginUser} />
           </Route>
           <Route path="/signup">
             <SignUpPage />
@@ -35,9 +36,12 @@ const App = () => {
           <Route path="/aboutus">
             <AboutUs />
           </Route>
+          <Route path="/addplace">
+            <AddPlaceForm />
+          </Route>
         </Switch>
       </Router>
-      
+
     </div>
   );
 };
