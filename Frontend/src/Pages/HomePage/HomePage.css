@@ -62,6 +62,7 @@ li {
   grid-template-columns: 3fr repeat(3, 1fr);
   align-items: center;
   justify-content: flex-end;
+  
 }
 
 .social-media ul li {
