@@ -7,6 +7,7 @@ import SignUpPage from './Pages/Sign-UpPage/SignUpPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import FAQ from './Pages/FAQ/FAQ';
 import AboutUs from './Pages/AboutUs/AboutUs';
+import WelcomePage from './Pages/WelcomePage/WelcomePage';
 
 const App = () => {
 
@@ -18,7 +19,7 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             {
-              user && user._id ? <HomePage setLoginUser={setLoginUser} /> : <LoginPage setLoginUser={setLoginUser}/>
+              user && user._id ? <HomePage setLoginUser={setLoginUser} /> : <WelcomePage />
             }
           </Route>
           <Route path="/login">

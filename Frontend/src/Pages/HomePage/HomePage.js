@@ -79,7 +79,6 @@ const HomePage = () => {
             </nav>
 
             {/* hero section  */}
-            <h1>Home Page ...</h1>
 
         </>
     );
