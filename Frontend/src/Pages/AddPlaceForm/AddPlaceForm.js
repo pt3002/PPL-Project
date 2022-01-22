@@ -1,16 +1,86 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 import 'bootstrap/dist/css/bootstrap.css'
 import "./AddPlaceForm.css";
 import HomePage from "../HomePage/HomePage";
 
 const AddPlaceForm = () => {
-
+    const name="Siddhesh Pawar"
     const [place, setPlace] = useState('');
     const [bestTime, setBestTime] = useState('');
     const [cost, setEstimatedCost] = useState('');
     const [description, setDescription] = useState('');
+     const [rating, setrating] = useState('');
+    const [prewurl, setprewurl] = useState();
+    const [isvalid, setisvalid] = useState(false);
+    console.log(rating);
+    const [file, setfile] = useState();
+    const [fetchurl, setfetchurl] = useState("");
+   
+    const addlocation=async(e)=>{
+        e.preventDefault();
+        console.log("addcontactworks");
+        const formdata=new FormData();
+        formdata.append("name",name);
+        formdata.append("title",place);
+        formdata.append("price",cost);
+        formdata.append("description",description);
+        formdata.append("besttimetotravel",bestTime);
+        formdata.append("rating",rating);
+        formdata.append("image",file);
+        // for (var key of formdata.entries()) {
+		// 	console.log(key[0] + ', ' + key[1])
+		// }
+        let url="http://localhost:9002/addlocationdetails";
+        let response = await fetch(url, {
+          method: 'POST',
+          body:formdata
+        });
+        const json=await response.json(); 
+        console.log(json);
+        if(json.status){
+            // console.log(json.urltoimage);
+            setfetchurl(json.urltoimage);
+            // console.log(fetchurl);
+        }
+    }
 
+    useEffect(() => {
+     if(!file){
+         return;
+     }
+     const filereader=new FileReader();
+     filereader.onload=()=>{
+         setprewurl(filereader.result);
+        //  console.log(file);
+     }
+     filereader.readAsDataURL(file);
+    }, [file,prewurl]);
+    
+    useEffect(() => {
+      
+    }, [fetchurl]);
+
+
+   
+    
+
+
+    const pickhandler=(event)=>{
+        console.log("hello");
+        console.log(event.target.files);
+          if(event.target.files.length===1){
+              const pickedfile=event.target.files[0];
+              setfile(pickedfile);
+              setisvalid(true);
+            //   console.log("hello");
+              return;
+          }
+          else{
+              setisvalid(false)
+          }
+    }
+    
 
     return (
 
@@ -42,20 +112,20 @@ const AddPlaceForm = () => {
                     </div>
                     <label for="rating" class="form-label" id="black-font">Rating</label>
                     <div class="rating">
-                        <input type="radio" name="rating" value="5" id="5"></input>
+                        <input type="radio" onClick={(e)=>setrating(e.target.value)} name="rating" value="5" id="5"></input>
                         <label for="5">☆</label>
-                        <input type="radio" name="rating" value="4" id="4"></input>
+                        <input type="radio" onClick={(e)=>setrating(e.target.value)}  name="rating" value="4" id="4"></input>
                         <label for="4">☆</label>
-                        <input type="radio" name="rating" value="3" id="3"></input>
+                        <input type="radio" onClick={(e)=>setrating(e.target.value)}  name="rating" value="3" id="3"></input>
                         <label for="3">☆</label>
-                        <input type="radio" name="rating" value="2" id="2"></input>
+                        <input type="radio" onClick={(e)=>setrating(e.target.value)}  name="rating" value="2" id="2"></input>
                         <label for="2">☆</label>
-                        <input type="radio" name="rating" value="1" id="1"></input>
+                        <input type="radio" onClick={(e)=>setrating(e.target.value)}  name="rating" value="1" id="1"></input>
                         <label for="1">☆</label>
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Upload an image</label>
-                        <input class="form-control form-control-sm" id="image" type="file"></input>
+                        <input class="form-control form-control-sm" id="image" onChange={pickhandler} type="file" name="myImage" accept=".jpg,.png,.jpeg" ></input>
                     </div>
                     <div class="mb-3">
                         <label for="Description" class="form-label">Description</label>
@@ -64,8 +134,10 @@ const AddPlaceForm = () => {
                             value={description}
                             class="form-control" id="Description" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" onClick={addlocation} class="btn btn-primary">Submit</button>
                 </form>
+
+                <img src={`http://localhost:9002/${fetchurl}`} alt="no image" />
             </div>
 
         </div>

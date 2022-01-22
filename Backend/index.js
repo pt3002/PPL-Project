@@ -1,11 +1,19 @@
-import express from "express"
-import cors from "cors"
-import mongoose from "mongoose"
-
+// import express from "express"
+const express=require("express");
+// import cors from "cors"
+var cors = require('cors')
+// import mongoose from "mongoose"
+const mongoose=require("mongoose");
+const locationdetails =require("./Schema/LocationDetails")
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
+var fs = require('fs');
+var path = require('path');
+
+app.use("/upload/images",express.static(path.join("upload","images")))
+
 
 mongoose.connect("mongodb://localhost:27017/PPL_backend",{
     useNewUrlParser: true,
@@ -67,6 +75,35 @@ app.post("/signup",(req, res)=>{
     })
     
 })
+
+const fileupload=require("./middleware/locationimage");
+app.post("/addlocationdetails",fileupload.single("image"),async(req,res)=>{
+    console.log("reach api");
+     let success=false;
+    try{
+        let location=await locationdetails.create({
+            name:req.body.name,
+            title:req.body.title,
+            description:req.body.description,
+            besttimetotravel:req.body.besttimetotravel,
+            price:req.body.price,
+            rating:req.body.rating,
+            image:req.file.path
+
+        })
+        success=true;
+        return res.json({status:success,message:"Location has been added succesfully",urltoimage:req.file.path});
+
+    }
+    
+      catch{
+          return res.json({status:success,message:"Error while adding location"});
+      }
+
+
+})
+
+
 
 app.listen(9002,()=>{
     console.log("BE started at port 9002")
