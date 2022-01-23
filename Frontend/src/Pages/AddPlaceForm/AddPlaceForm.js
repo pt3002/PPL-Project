@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css'
 import "./AddPlaceForm.css";
@@ -6,40 +6,40 @@ import HomePage from "../HomePage/HomePage";
 
 const AddPlaceForm = (props) => {
     // const name="Siddhesh Pawar"
-    const {setPlaces}=props;
+    const { setPlaces } = props;
     const [place, setPlace] = useState('');
     const [bestTime, setBestTime] = useState('');
     const [cost, setEstimatedCost] = useState('');
     const [description, setDescription] = useState('');
-     const [rating, setrating] = useState('');
+    const [rating, setrating] = useState('');
     const [prewurl, setprewurl] = useState();
     const [isvalid, setisvalid] = useState(false);
     console.log(rating);
     const [file, setfile] = useState();
     const [fetchurl, setfetchurl] = useState("");
-   
-    const addlocation=async(e)=>{
+
+    const addlocation = async (e) => {
         e.preventDefault();
         console.log("addcontactworks");
-        const formdata=new FormData();
-        formdata.append("name",props.name);
-        formdata.append("title",place);
-        formdata.append("price",cost);
-        formdata.append("description",description);
-        formdata.append("besttimetotravel",bestTime);
-        formdata.append("rating",rating);
-        formdata.append("image",file);
+        const formdata = new FormData();
+        formdata.append("name", props.name);
+        formdata.append("title", place);
+        formdata.append("price", cost);
+        formdata.append("description", description);
+        formdata.append("besttimetotravel", bestTime);
+        formdata.append("rating", rating);
+        formdata.append("image", file);
         // for (var key of formdata.entries()) {
-		// 	console.log(key[0] + ', ' + key[1])
-		// }
-        let url="http://localhost:9002/addlocationdetails";
+        // 	console.log(key[0] + ', ' + key[1])
+        // }
+        let url = "http://localhost:9002/addlocationdetails";
         let response = await fetch(url, {
-          method: 'POST',
-          body:formdata
+            method: 'POST',
+            body: formdata
         });
-        const json=await response.json(); 
+        const json = await response.json();
         console.log(json);
-        if(json.status){
+        if (json.status) {
             // console.log(json.urltoimage);
             setfetchurl(json.urltoimage);
             placeadded();
@@ -48,46 +48,47 @@ const AddPlaceForm = (props) => {
     }
 
     useEffect(() => {
-     if(!file){
-         return;
-     }
-     const filereader=new FileReader();
-     filereader.onload=()=>{
-         setprewurl(filereader.result);
-        //  console.log(file);
-     }
-     filereader.readAsDataURL(file);
-    }, [file,prewurl]);
-    
+        if (!file) {
+            return;
+        }
+        const filereader = new FileReader();
+        filereader.onload = () => {
+            setprewurl(filereader.result);
+            //  console.log(file);
+        }
+        filereader.readAsDataURL(file);
+    }, [file, prewurl]);
+
     useEffect(() => {
-      
+
     }, [fetchurl]);
 
- 
-   
-    
 
 
-    const pickhandler=(event)=>{
+
+
+
+    const pickhandler = (event) => {
         console.log("hello");
         console.log(event.target.files);
-          if(event.target.files.length===1){
-              const pickedfile=event.target.files[0];
-              setfile(pickedfile);
-              setisvalid(true);
+        if (event.target.files.length === 1) {
+            const pickedfile = event.target.files[0];
+            setfile(pickedfile);
+            setisvalid(true);
             //   console.log("hello");
-              return;
-          }
-          else{
-              setisvalid(false)
-          }
+            return;
+        }
+        else {
+            setisvalid(false)
+        }
     }
-    
-    const placeadded=()=>{
+
+    const placeadded = () => {
         axios.get('http://localhost:9002/places')
-          .then(res=>setPlaces(res.data))
-          .catch(error => console.log(error))
-          ;}
+            .then(res => setPlaces(res.data))
+            .catch(error => console.log(error))
+            ;
+    }
 
 
     return (
@@ -120,15 +121,15 @@ const AddPlaceForm = (props) => {
                     </div>
                     <label for="rating" class="form-label" id="black-font">Rating</label>
                     <div class="rating">
-                        <input type="radio" onClick={(e)=>setrating(e.target.value)} name="rating" value="5" id="5"></input>
+                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="5" id="5"></input>
                         <label for="5">☆</label>
-                        <input type="radio" onClick={(e)=>setrating(e.target.value)}  name="rating" value="4" id="4"></input>
+                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="4" id="4"></input>
                         <label for="4">☆</label>
-                        <input type="radio" onClick={(e)=>setrating(e.target.value)}  name="rating" value="3" id="3"></input>
+                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="3" id="3"></input>
                         <label for="3">☆</label>
-                        <input type="radio" onClick={(e)=>setrating(e.target.value)}  name="rating" value="2" id="2"></input>
+                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="2" id="2"></input>
                         <label for="2">☆</label>
-                        <input type="radio" onClick={(e)=>setrating(e.target.value)}  name="rating" value="1" id="1"></input>
+                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="1" id="1"></input>
                         <label for="1">☆</label>
                     </div>
                     <div class="mb-3">

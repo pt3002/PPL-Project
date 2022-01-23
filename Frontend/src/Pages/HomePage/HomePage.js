@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "./HomePage.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@popperjs/core";
+import "bootstrap";
+import { Nav, NavDropdown } from "react-bootstrap";
 import {
     FaFacebookSquare,
     FaInstagramSquare,
@@ -31,8 +36,19 @@ const HomePage = () => {
                         <li>
                             <NavLink to="/aboutus">About Us</NavLink>
                         </li>
+                        {/* <li class="dropdown">
+                            <button className="btn dropdown-toggle" style={{ fontSize: 17 }} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filter By
+                            </button>
+
+                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterprice">Price</a>
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterrating">Rating</a>
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filtercreator">Creator</a>
+                            </div>
+                        </li> */}
                         <li>
-                            <NavLink to="#">Filter by</NavLink>
+                            <NavLink to="/filterpage">Apply Filter</NavLink>
                         </li>
                         <li>
                             <NavLink to="/faq">FAQs</NavLink>
