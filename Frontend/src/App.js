@@ -48,7 +48,7 @@ const App = () => {
             <AboutUs />
           </Route>
           <Route path="/addplace">
-            <AddPlaceForm />
+            <AddPlaceForm name={user.name}/>
           </Route>
           <Route to="/userslist" render={() => <UsersList lists={lists}/>} />
         </Switch>
