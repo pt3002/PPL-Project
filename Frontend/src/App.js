@@ -11,6 +11,7 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import WelcomePage from './Pages/WelcomePage/WelcomePage';
 import AddPlaceForm from './Pages/AddPlaceForm/AddPlaceForm';
 import UsersList from './Pages/UsersList/UsersList';
+import Places from './Pages/Places/Places';
 
 const App = () => {
 
@@ -19,9 +20,20 @@ const App = () => {
   //Users List
   const [lists, setLists] = useState([])
 
+  //Places List
+  const [places, setPlaces] = useState([])
+
+  //Axios for User list
   useEffect(()=>{
     axios.get('http://localhost:9002/userslist')
       .then(res=>setLists(res.data))
+      .catch(error => console.log(error));
+  })
+
+  //Axios for List of places
+  useEffect(()=>{
+    axios.get('http://localhost:9002/places')
+      .then(res=>setPlaces(res.data))
       .catch(error => console.log(error));
   })
 
@@ -50,7 +62,8 @@ const App = () => {
           <Route path="/addplace">
             <AddPlaceForm name={user.name}/>
           </Route>
-          <Route to="/userslist" render={() => <UsersList lists={lists}/>} />
+          <Route path="/places" render={() => <Places places={places}/>} />
+          <Route path="/userslist" render={() => <UsersList lists={lists}/>} />
         </Switch>
       </Router>
 

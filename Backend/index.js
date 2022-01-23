@@ -83,6 +83,11 @@ app.get('/userslist',(req,res)=>{
         .catch(err=>res.status(400).res.json(`Error:${err}`))
 })
 
+app.get('/places',(req,res)=>{
+    locationdetails.find()
+        .then(user=>res.json(user))
+        .catch(err=>res.status(400).res.json(`Error:${err}`))
+})
 //router for list of places
 
 
