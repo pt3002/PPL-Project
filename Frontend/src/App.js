@@ -13,7 +13,7 @@ import AddPlaceForm from './Pages/AddPlaceForm/AddPlaceForm';
 const App = () => {
 
   const [user, setLoginUser] = useState({})
-
+  console.log(user);
   return (
     <div className="App">
       <Router>
@@ -37,7 +37,7 @@ const App = () => {
             <AboutUs />
           </Route>
           <Route path="/addplace">
-            <AddPlaceForm />
+            <AddPlaceForm name={user.name}/>
           </Route>
         </Switch>
       </Router>

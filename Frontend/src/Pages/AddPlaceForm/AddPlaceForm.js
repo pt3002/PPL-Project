@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import "./AddPlaceForm.css";
 import HomePage from "../HomePage/HomePage";
 
-const AddPlaceForm = () => {
-    const name="Siddhesh Pawar"
+const AddPlaceForm = (props) => {
+    // const name="Siddhesh Pawar"
     const [place, setPlace] = useState('');
     const [bestTime, setBestTime] = useState('');
     const [cost, setEstimatedCost] = useState('');
@@ -21,7 +21,7 @@ const AddPlaceForm = () => {
         e.preventDefault();
         console.log("addcontactworks");
         const formdata=new FormData();
-        formdata.append("name",name);
+        formdata.append("name",props.name);
         formdata.append("title",place);
         formdata.append("price",cost);
         formdata.append("description",description);
