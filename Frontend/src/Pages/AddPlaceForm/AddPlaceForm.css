@@ -38,3 +38,8 @@
 .rating>input:checked~label:before {
     opacity: 1
 }
+
+.ADD_FORM{
+    padding:100px;
+}
+
