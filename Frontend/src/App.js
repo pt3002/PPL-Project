@@ -12,6 +12,10 @@ import WelcomePage from './Pages/WelcomePage/WelcomePage';
 import AddPlaceForm from './Pages/AddPlaceForm/AddPlaceForm';
 import UsersList from './Pages/UsersList/UsersList';
 import Places from './Pages/Places/Places';
+import Filter_Price from './Pages/Filter_Price/Filter_Price';
+import Filter_Rating from './Pages/Filter_Rating/Filter_Rating';
+import Filter_Creator from './Pages/Filter_Creator/Filter_Creator';
+import FilterPage from './Pages/FilterPage/FilterPage';
 
 const App = () => {
 
@@ -59,8 +63,18 @@ const App = () => {
             <AboutUs />
           </Route>
           <Route path="/addplace">
-            <AddPlaceForm name={user.name} setPlaces={setPlaces}/>
+            <AddPlaceForm name={user.name} setPlaces={setPlaces} setLoginUser={setLoginUser}/>
           </Route>
+          <Route path="/filterprice">
+            <Filter_Price />
+          </Route>
+          <Route path="/filterrating">
+            <Filter_Rating />
+          </Route>
+          <Route path="/filterpage">
+            <FilterPage />
+          </Route>
+          <Route path="/filtercreator" render={() => <Filter_Creator lists={lists}/>} />
           <Route path="/places" render={() => <Places places={places}/>} />
           <Route path="/userslist" render={() => <UsersList lists={lists}/>} />
         </Switch>
