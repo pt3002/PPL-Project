@@ -1,5 +1,6 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import HomePage from './Pages/HomePage/HomePage';
@@ -14,6 +15,15 @@ import UsersList from './Pages/UsersList/UsersList';
 const App = () => {
 
   const [user, setLoginUser] = useState({})
+
+  //Users List
+  const [lists, setLists] = useState([])
+
+  useEffect(()=>{
+    axios.get('http://localhost:9002/userslist')
+      .then(res=>setLists(res.data))
+      .catch(error => console.log(error));
+  })
 
   return (
     <div className="App">
@@ -40,9 +50,7 @@ const App = () => {
           <Route path="/addplace">
             <AddPlaceForm />
           </Route>
-          <Route path="/userslist">
-            <UsersList />
-          </Route>
+          <Route to="/userslist" render={() => <UsersList lists={lists}/>} />
         </Switch>
       </Router>
 
