@@ -84,7 +84,7 @@ const AddPlaceForm = (props) => {
     }
     
     const placeadded=()=>{
-        axios.get('http://localhost:9002/userslist')
+        axios.get('http://localhost:9002/places')
           .then(res=>setPlaces(res.data))
           .catch(error => console.log(error))
           ;}
