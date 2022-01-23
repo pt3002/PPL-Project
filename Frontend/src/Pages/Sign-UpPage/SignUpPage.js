@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 
 import './SignUpPage.css';
 
-const SignUpPage = () => {
-
+const SignUpPage = (props) => {
+    const {setLists}=props;
     const history = useHistory()
 
     const [user, setUser] = useState({
@@ -28,6 +28,7 @@ const SignUpPage = () => {
         if (name && email && password && (password === reEnterpassword)) {
             axios.post("http://localhost:9002/signup", user)
                 .then(res => alert(res.data.message))
+            userupdated();
             history.push("/login")
         }
         else {
@@ -35,6 +36,16 @@ const SignUpPage = () => {
         }
 
     }
+    const userupdated=()=>{
+        axios.get('http://localhost:9002/userslist')
+          .then(res=>setLists(res.data))
+          .catch(error => console.log(error));
+          console.log("userupdatedcalled");
+      }
+      
+
+
+
 
     return (
         <div className="signup">

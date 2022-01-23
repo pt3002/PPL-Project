@@ -49,8 +49,8 @@ const App = () => {
             <LoginPage
               setLoginUser={setLoginUser} />
           </Route>
-          <Route path="/signup">
-            <SignUpPage />
+          <Route path="/signup" >
+            <SignUpPage setLists={setLists}/>
           </Route>
           <Route path="/faq">
             <FAQ />
