@@ -14,7 +14,7 @@ import UsersList from './Pages/UsersList/UsersList';
 const App = () => {
 
   const [user, setLoginUser] = useState({})
-  console.log(user);
+
   return (
     <div className="App">
       <Router>
@@ -38,7 +38,7 @@ const App = () => {
             <AboutUs />
           </Route>
           <Route path="/addplace">
-            <AddPlaceForm name={user.name}/>
+            <AddPlaceForm />
           </Route>
           <Route path="/userslist">
             <UsersList />
