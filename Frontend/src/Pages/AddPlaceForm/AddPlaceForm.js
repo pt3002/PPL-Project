@@ -88,7 +88,7 @@ const AddPlaceForm = (props) => {
             <div>
                 <HomePage />
             </div>
-            <div className="m-2 w-50 p-3">
+            <div className="ADD_FORM">
                 <h4>Fill the Following form to add a place</h4>
                 <form>
                     <div class="mb-3">

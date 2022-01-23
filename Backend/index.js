@@ -76,6 +76,16 @@ app.post("/signup",(req, res)=>{
     
 })
 
+//router for list of users
+app.get('/userslist',(req,res)=>{
+    User.find()
+        .then(user=>res.json(user))
+        .catch(err=>res.status(400).res.json(`Error:${err}`))
+})
+
+//router for list of places
+
+
 const fileupload=require("./middleware/locationimage");
 app.post("/addlocationdetails",fileupload.single("image"),async(req,res)=>{
     console.log("reach api");

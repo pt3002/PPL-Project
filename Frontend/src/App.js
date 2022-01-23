@@ -9,6 +9,7 @@ import FAQ from './Pages/FAQ/FAQ';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import WelcomePage from './Pages/WelcomePage/WelcomePage';
 import AddPlaceForm from './Pages/AddPlaceForm/AddPlaceForm';
+import UsersList from './Pages/UsersList/UsersList';
 
 const App = () => {
 
@@ -38,6 +39,9 @@ const App = () => {
           </Route>
           <Route path="/addplace">
             <AddPlaceForm name={user.name}/>
+          </Route>
+          <Route path="/userslist">
+            <UsersList />
           </Route>
         </Switch>
       </Router>
