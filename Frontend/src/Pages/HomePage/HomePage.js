@@ -40,6 +40,9 @@ const HomePage = () => {
                         <li>
                             <NavLink to="/addplace">Add</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/userslist">List of users</NavLink>
+                        </li>
                     </ul>
                 </div>
 
