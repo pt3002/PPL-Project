@@ -22,20 +22,19 @@ const App = () => {
 
   //Places List
   const [places, setPlaces] = useState([])
-
   //Axios for User list
   useEffect(()=>{
     axios.get('http://localhost:9002/userslist')
       .then(res=>setLists(res.data))
       .catch(error => console.log(error));
-  })
+  },[])
 
   //Axios for List of places
   useEffect(()=>{
     axios.get('http://localhost:9002/places')
       .then(res=>setPlaces(res.data))
       .catch(error => console.log(error));
-  })
+  },[])
 
   return (
     <div className="App">
@@ -60,7 +59,7 @@ const App = () => {
             <AboutUs />
           </Route>
           <Route path="/addplace">
-            <AddPlaceForm name={user.name}/>
+            <AddPlaceForm name={user.name} setPlaces={setPlaces}/>
           </Route>
           <Route path="/places" render={() => <Places places={places}/>} />
           <Route path="/userslist" render={() => <UsersList lists={lists}/>} />

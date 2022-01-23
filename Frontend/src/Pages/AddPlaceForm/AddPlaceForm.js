@@ -1,11 +1,12 @@
 import React, { useState,useEffect } from "react";
-
+import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css'
 import "./AddPlaceForm.css";
 import HomePage from "../HomePage/HomePage";
 
 const AddPlaceForm = (props) => {
     // const name="Siddhesh Pawar"
+    const {setPlaces}=props;
     const [place, setPlace] = useState('');
     const [bestTime, setBestTime] = useState('');
     const [cost, setEstimatedCost] = useState('');
@@ -41,6 +42,7 @@ const AddPlaceForm = (props) => {
         if(json.status){
             // console.log(json.urltoimage);
             setfetchurl(json.urltoimage);
+            placeadded();
             // console.log(fetchurl);
         }
     }
@@ -61,7 +63,7 @@ const AddPlaceForm = (props) => {
       
     }, [fetchurl]);
 
-
+ 
    
     
 
@@ -81,6 +83,12 @@ const AddPlaceForm = (props) => {
           }
     }
     
+    const placeadded=()=>{
+        axios.get('http://localhost:9002/userslist')
+          .then(res=>setPlaces(res.data))
+          .catch(error => console.log(error))
+          ;}
+
 
     return (
 

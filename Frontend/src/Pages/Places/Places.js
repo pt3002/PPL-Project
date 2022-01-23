@@ -9,9 +9,10 @@ const Places = ({places}) => {
             <div>
                 <HomePage />
             </div>
+            
             {places.map((place,key) => (
                 <div class="card_testimonial">
-                    <div class="img-container_testimonial">{place.image}</div>
+                    <div class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" /></div>
                     <div class="card-content_testimonial">
                         <h1>Title : {place.title}</h1>
                         <h2>Best Time to travel : {place.besttimetotravel}</h2>
