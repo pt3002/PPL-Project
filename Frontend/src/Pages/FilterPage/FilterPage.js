@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./FilterPage.css";
 import HomePage from "../HomePage/HomePage";
@@ -28,25 +26,6 @@ const FilterPage = () => {
                     <Filter category={"price"} price={cost}/>
                 }
             </div>
-            <div className="ml-2">
-                <h1>Rating</h1>
-            </div>
-            <div>
-                <button className="btn btn-large btn-warning" onClick={(e) => setRating(e.target.value)} value="1">1 and Up</button>
-                <button className="btn btn-large btn-warning" onClick={(e) => setRating(e.target.value)} value="2">2 and Up</button>
-                <button className="btn btn-large btn-warning" onClick={(e) => setRating(e.target.value)} value="3">3 and Up</button>
-                <button className="btn btn-large btn-warning" onClick={(e) => setRating(e.target.value)} value="4">4 and Up</button>
-                <button className="btn btn-large btn-warning" onClick={(e) => setRating(e.target.value)} value="5">5</button>
-                {rating!='' &&
-                    <button className="btn btn-large btn-dark">See filtered places according to rating?</button>
-                }
-            </div>
-            <div className="ml-2 my-3">
-                <h3>Rating -- {rating}</h3>
-                <h3>Budget -- {cost}</h3>
-            </div>
-
-
         </div>
     )
 }

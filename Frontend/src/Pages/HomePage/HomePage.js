@@ -36,17 +36,17 @@ const HomePage = () => {
                         <li>
                             <NavLink to="/aboutus">About Us</NavLink>
                         </li>
-                        {/* <li class="dropdown">
+                        <li class="dropdown">
                             <button className="btn dropdown-toggle" style={{ fontSize: 17 }} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Filter By
                             </button>
 
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterprice">Price</a>
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterpage">Price</a>
                                 <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterrating">Rating</a>
-                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filtercreator">Creator</a>
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterpage">Creator</a>
                             </div>
-                        </li> */}
+                        </li> 
                         <li>
                             <NavLink to="/filterpage">Apply Filter</NavLink>
                         </li>

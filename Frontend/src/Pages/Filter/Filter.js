@@ -5,7 +5,7 @@ import "./Filter.css";
 import HomePage from "../HomePage/HomePage";
 
 function handlerror(){
-    
+
 }
 
 const Filter = (props) => {
@@ -49,6 +49,47 @@ const Filter = (props) => {
               .catch(error => handlerror());
           }, [])
 
+        //rating 1 and above
+        const [rating1, setRating1] = useState([])
+        useEffect(() => {
+            axios.get('http://localhost:9002/rating1')
+              .then(res => setRating1(res.data))
+              .catch(error => handlerror());
+          }, [])
+
+        //rating 2 and above
+        const [rating2, setRating2] = useState([])
+        useEffect(() => {
+            axios.get('http://localhost:9002/rating2')
+              .then(res => setRating2(res.data))
+              .catch(error => handlerror());
+          }, [])
+
+        //rating 3 and above
+        const [rating3, setRating3] = useState([])
+        useEffect(() => {
+            axios.get('http://localhost:9002/rating3')
+              .then(res => setRating3(res.data))
+              .catch(error => handlerror());
+          }, [])
+
+        //rating 4 and above
+        const [rating4, setRating4] = useState([])
+        useEffect(() => {
+            axios.get('http://localhost:9002/rating4')
+              .then(res => setRating4(res.data))
+              .catch(error => handlerror());
+          }, [])
+
+        //rating 5 and above
+        const [rating5, setRating5] = useState([])
+        useEffect(() => {
+            axios.get('http://localhost:9002/rating5')
+              .then(res => setRating5(res.data))
+              .catch(error => handlerror());
+          }, [])
+
+        if(props.category==="price"){
         if(props.price==="20000"){
             return(
                 <div>
@@ -129,7 +170,7 @@ const Filter = (props) => {
             )
         }
 
-        if(props.price==="500000"){
+        else if(props.price==="500000"){
             return(
                 <div>
                     {above100k.map((place,key) => (
@@ -148,6 +189,107 @@ const Filter = (props) => {
                 </div>
             )
         }
+    }
+    if(props.category==="rating"){
+        if(props.rating==="1"){
+            return(
+                <div>
+                    {rating1.map((place,key) => (
+                        <div class="card_testimonial">
+                            <div class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" /></div>
+                            <div class="card-content_testimonial">
+                                <h1>Title : {place.title}</h1>
+                                <h2>Best Time to travel : {place.besttimetotravel}</h2>
+                                <h2>Creator : {place.name} </h2>
+                                <h2>Rating : {place.rating}</h2>
+                                <p class="feedback_testimonial">Description : {place.description}</p>
+                                <p class="author_testimonial">Price : {place.price}</p>
+                            </div>
+                        </div>
+                ))}
+                </div>
+            )
+        }
+        else if(props.rating==="2"){
+            return(
+                <div>
+                    {rating2.map((place,key) => (
+                        <div class="card_testimonial">
+                            <div class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" /></div>
+                            <div class="card-content_testimonial">
+                                <h1>Title : {place.title}</h1>
+                                <h2>Best Time to travel : {place.besttimetotravel}</h2>
+                                <h2>Creator : {place.name} </h2>
+                                <h2>Rating : {place.rating}</h2>
+                                <p class="feedback_testimonial">Description : {place.description}</p>
+                                <p class="author_testimonial">Price : {place.price}</p>
+                            </div>
+                        </div>
+                ))}
+                </div>
+            )
+        }
+
+        else if(props.rating==="3"){
+            return(
+                <div>
+                    {rating3.map((place,key) => (
+                        <div class="card_testimonial">
+                            <div class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" /></div>
+                            <div class="card-content_testimonial">
+                                <h1>Title : {place.title}</h1>
+                                <h2>Best Time to travel : {place.besttimetotravel}</h2>
+                                <h2>Creator : {place.name} </h2>
+                                <h2>Rating : {place.rating}</h2>
+                                <p class="feedback_testimonial">Description : {place.description}</p>
+                                <p class="author_testimonial">Price : {place.price}</p>
+                            </div>
+                        </div>
+                ))}
+                </div>
+            )
+        }
+
+        else if(props.rating==="4"){
+            return(
+                <div>
+                    {rating4.map((place,key) => (
+                        <div class="card_testimonial">
+                            <div class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" /></div>
+                            <div class="card-content_testimonial">
+                                <h1>Title : {place.title}</h1>
+                                <h2>Best Time to travel : {place.besttimetotravel}</h2>
+                                <h2>Creator : {place.name} </h2>
+                                <h2>Rating : {place.rating}</h2>
+                                <p class="feedback_testimonial">Description : {place.description}</p>
+                                <p class="author_testimonial">Price : {place.price}</p>
+                            </div>
+                        </div>
+                ))}
+                </div>
+            )
+        }
+
+        else if(props.rating==="5"){
+            return(
+                <div>
+                    {rating5.map((place,key) => (
+                        <div class="card_testimonial">
+                            <div class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" /></div>
+                            <div class="card-content_testimonial">
+                                <h1>Title : {place.title}</h1>
+                                <h2>Best Time to travel : {place.besttimetotravel}</h2>
+                                <h2>Creator : {place.name} </h2>
+                                <h2>Rating : {place.rating}</h2>
+                                <p class="feedback_testimonial">Description : {place.description}</p>
+                                <p class="author_testimonial">Price : {place.price}</p>
+                            </div>
+                        </div>
+                ))}
+                </div>
+            )
+        }
+    }
 }
 
 export default Filter;

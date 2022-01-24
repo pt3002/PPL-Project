@@ -135,28 +135,28 @@ app.get('/rating1',(req,res)=>{
 
 //rating 2
 app.get('/rating2',(req,res)=>{
-    locationdetails.find({ rating:2 })
+    locationdetails.find({ rating:{$gt:1} })
         .then(user=>res.json(user))
         .catch(err=>res.json("No such place"))
 })
 
 //rating 3
 app.get('/rating3',(req,res)=>{
-    locationdetails.find({ rating:3 })
+    locationdetails.find({ rating:{$gt:2} })
         .then(user=>res.json(user))
         .catch(err=>res.json("No such place"))
 })
 
 //rating 4
 app.get('/rating4',(req,res)=>{
-    locationdetails.find({ rating:4 })
+    locationdetails.find({ rating:{$gt:3} })
         .then(user=>res.json(user))
         .catch(err=>res.json("No such place"))
 })
 
 //rating 5
 app.get('/rating5',(req,res)=>{
-    locationdetails.find({ rating:5 })
+    locationdetails.find({ rating:{$gt:4} })
         .then(user=>res.json(user))
         .catch(err=>res.json("No such place"))
 })
