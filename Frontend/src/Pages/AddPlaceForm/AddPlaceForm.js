@@ -102,53 +102,54 @@ const AddPlaceForm = (props) => {
                 <div className="headingform">
                     <h2>Fill the Following form to add a place!</h2>
                 </div>
-                <form className="formbody" >
-                    <div className="inputfield">
-                        <label className="titleform" for="Place" >Name of the Place</label>
-                        <input className="inputArea"
-                            onChange={(e) => setPlace(e.target.value)}
-                            value={place} type="text" id="Place" placeholder="eg Taj Mahal"></input>
-                    </div>
-                    <div className="inputfield">
-                        <label className="titleform" for="bestTimeToVisit" >Best time to Visit the Place</label>
-                        <input className="inputArea"
-                            onChange={(e) => setBestTime(e.target.value)}
-                            value={bestTime} type="text" id="bestTimeToVisit" placeholder="eg June - Sept"></input>
-                    </div>
-                    <div className="inputfield">
-                        <label className="titleform" for="estimatedCost" >Estimated Cost (in ₹)</label>
-                        <input className="inputArea"
-                            onChange={(e) => setEstimatedCost(e.target.value)}
-                            value={cost}
-                            type="number" id="estimatedCost" placeholder="5000"></input>
-                    </div>
-                    <label className="titleform" for="rating" id="black-font">Rating</label>
-                    <div class="rating">
-                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="5" id="5"></input>
-                        <label for="5">☆</label>
-                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="4" id="4"></input>
-                        <label for="4">☆</label>
-                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="3" id="3"></input>
-                        <label for="3">☆</label>
-                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="2" id="2"></input>
-                        <label for="2">☆</label>
-                        <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="1" id="1"></input>
-                        <label for="1">☆</label>
-                    </div>
-                    <div className="inputfield">
-                        <label className="titleform" for="image" >Upload an image</label>
-                        <input className="imageupload" id="image" onChange={pickhandler} type="file" name="myImage" accept=".jpg,.png,.jpeg" ></input>
-                    </div>
-                    <div className="inputfield">
-                        <label className="titleform" for="Description" >Description</label>
-                        <textarea className="inputArea"
-                            onChange={(e) => setDescription(e.target.value)}
-                            value={description}
-                            id="Description" rows="3"></textarea>
-                    </div>
-                    <button className="Buttonform" type="submit" onClick={addlocation}>Submit</button>
-                </form>
-
+                <div className="formbody">
+                    <form>
+                        <div className="inputfield">
+                            <label className="titleform" for="Place" >Name of the Place</label>
+                            <input className="inputArea"
+                                onChange={(e) => setPlace(e.target.value)}
+                                value={place} type="text" id="Place" placeholder="eg Taj Mahal"></input>
+                        </div>
+                        <div className="inputfield">
+                            <label className="titleform" for="bestTimeToVisit" >Best time to Visit the Place</label>
+                            <input className="inputArea"
+                                onChange={(e) => setBestTime(e.target.value)}
+                                value={bestTime} type="text" id="bestTimeToVisit" placeholder="eg June - Sept"></input>
+                        </div>
+                        <div className="inputfield">
+                            <label className="titleform" for="estimatedCost" >Estimated Cost (in ₹)</label>
+                            <input className="inputArea"
+                                onChange={(e) => setEstimatedCost(e.target.value)}
+                                value={cost}
+                                type="number" id="estimatedCost" placeholder="5000"></input>
+                        </div>
+                        <label className="titleform" for="rating" id="black-font">Rating</label>
+                        <div class="rating">
+                            <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="5" id="5"></input>
+                            <label for="5">☆</label>
+                            <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="4" id="4"></input>
+                            <label for="4">☆</label>
+                            <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="3" id="3"></input>
+                            <label for="3">☆</label>
+                            <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="2" id="2"></input>
+                            <label for="2">☆</label>
+                            <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="1" id="1"></input>
+                            <label for="1">☆</label>
+                        </div>
+                        <div className="inputfield">
+                            <label className="titleform" for="image" >Upload an image</label>
+                            <input className="imageupload" id="image" onChange={pickhandler} type="file" name="myImage" accept=".jpg,.png,.jpeg" ></input>
+                        </div>
+                        <div className="inputfield">
+                            <label className="titleform" for="Description" >Description</label>
+                            <textarea className="inputArea"
+                                onChange={(e) => setDescription(e.target.value)}
+                                value={description}
+                                id="Description" rows="3"></textarea>
+                        </div>
+                        <button className="Buttonform" type="submit" onClick={addlocation}>Submit</button>
+                    </form>
+                </div>
                 <img src={`http://localhost:9002/${fetchurl}`} alt="no image" />
             </div>
 
