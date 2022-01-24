@@ -20,11 +20,11 @@ besttimetotravel:{
  },
  price:{
      required:true,
-     type:String
+     type:Number
  },
  rating:{
      required:true,
-     type:String
+     type:Number
  },
 
  image:{

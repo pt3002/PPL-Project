@@ -83,12 +83,49 @@ app.get('/userslist',(req,res)=>{
         .catch(err=>res.status(400).res.json(`Error:${err}`))
 })
 
+//router for list of places
 app.get('/places',(req,res)=>{
     locationdetails.find()
         .then(user=>res.json(user))
         .catch(err=>res.status(400).res.json(`Error:${err}`))
 })
-//router for list of places
+
+
+//router for places under 20k
+app.get('/placesunder20k',(req,res)=>{
+    locationdetails.find( { price: { $lt: 20000 } } )
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
+
+//router for place 20k-40k
+app.get('/places20-40k',(req,res)=>{
+    locationdetails.find({ $and : [{ price: {$gt:20000}},{price:{$lt:40000}}] })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
+
+//router for place 40k-60k
+app.get('/places40-60k',(req,res)=>{
+    locationdetails.find({ $and : [{ price: {$gt:40000}},{price:{$lt:60000}}] })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
+
+//router for place 60k-100k
+app.get('/places60-100k',(req,res)=>{
+    locationdetails.find({ $and : [{ price: {$gt:60000}},{price:{$lt:100000}}] })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
+
+//router for place over 100k
+app.get('/placesover100k',(req,res)=>{
+    locationdetails.find({ price: { $gt: 100000 } })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
+
 
 
 const fileupload=require("./middleware/locationimage");
@@ -101,8 +138,8 @@ app.post("/addlocationdetails",fileupload.single("image"),async(req,res)=>{
             title:req.body.title,
             description:req.body.description,
             besttimetotravel:req.body.besttimetotravel,
-            price:req.body.price,
-            rating:req.body.rating,
+            price:req.body.price-'0',
+            rating:req.body.rating-'0',
             image:req.file.path
 
         })
