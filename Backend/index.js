@@ -126,7 +126,40 @@ app.get('/placesover100k',(req,res)=>{
         .catch(err=>res.json("No such place"))
 })
 
+//rating 1
+app.get('/rating1',(req,res)=>{
+    locationdetails.find({ rating:1 })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
 
+//rating 2
+app.get('/rating2',(req,res)=>{
+    locationdetails.find({ rating:2 })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
+
+//rating 3
+app.get('/rating3',(req,res)=>{
+    locationdetails.find({ rating:3 })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
+
+//rating 4
+app.get('/rating4',(req,res)=>{
+    locationdetails.find({ rating:4 })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
+
+//rating 5
+app.get('/rating5',(req,res)=>{
+    locationdetails.find({ rating:5 })
+        .then(user=>res.json(user))
+        .catch(err=>res.json("No such place"))
+})
 
 const fileupload=require("./middleware/locationimage");
 app.post("/addlocationdetails",fileupload.single("image"),async(req,res)=>{
