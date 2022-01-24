@@ -46,9 +46,6 @@ const HomePage = () => {
                                 <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterrating">Rating</a>
                                 <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterpage">Creator</a>
                             </div>
-                        </li> 
-                        <li>
-                            <NavLink className="navbaritem" to="/filterpage">Filter By</NavLink>
                         </li>
                         <li>
                             <NavLink className="navbaritem" to="/faq">FAQs</NavLink>

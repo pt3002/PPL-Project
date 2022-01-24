@@ -1,6 +1,9 @@
+
 .addplaceDiv{
     display: flex;
     flex-direction: column;
+    
+    
 }
 
 .rating {
@@ -35,25 +38,23 @@
 }
 .titleform{
     font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .inputArea{
     padding: 1rem 3rem;
-    width: 35vw;
+    width: 55vw;
     display: block;
 }
 .something{
     width: 100vw;
 }
 .headingform{
-    margin-top: 30px;
+    margin: 30px;
     display: flex;
     justify-content: center;
 }
-.formbody{
-    margin-top: 30px;
-    
-}
+
 .inputfield{
     margin-bottom: 10px;
 }
@@ -64,4 +65,9 @@
 .imageupload{
     width: 25vw;
     display: block;
+}
+
+.formbody{
+    display: flex;
+    justify-content: center;
 }
