@@ -13,11 +13,17 @@ const fileupload =multer({
             cb(null,'upload/images');
          },
          filename:(req,file,cb)=>{
+             if(file===null){
+                return cb(null,"nofile");
+             }
              const ext= Mimetypemap[file.mimetype];
              cb(null,uuid()+'.'+ext);
          }
      }),
      fileFilter:(req,file,cb)=>{
+         if(file===null){
+            return cb(null,true);
+         }
          const isvalid=!!Mimetypemap[file.mimetype];
          let error=isvalid?null:new Error("invalid mimtype");
          cb(error,isvalid);

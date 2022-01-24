@@ -130,9 +130,16 @@ app.get('/placesover100k',(req,res)=>{
 
 const fileupload=require("./middleware/locationimage");
 app.post("/addlocationdetails",fileupload.single("image"),async(req,res)=>{
-    console.log("reach api");
+    // console.log("reach api");
      let success=false;
-    try{
+     try{
+        let pathfile;
+        if(req.file==undefined){
+            pathfile="noimageadded";
+        }
+        else{
+            pathfile=req.file.path;
+        }
         let location=await locationdetails.create({
             name:req.body.name,
             title:req.body.title,
@@ -140,22 +147,86 @@ app.post("/addlocationdetails",fileupload.single("image"),async(req,res)=>{
             besttimetotravel:req.body.besttimetotravel,
             price:req.body.price-'0',
             rating:req.body.rating-'0',
-            image:req.file.path
+            image:pathfile
 
         })
         success=true;
-        return res.json({status:success,message:"Location has been added succesfully",urltoimage:req.file.path});
-
+        return res.json({status:success,message:"Location has been added succesfully",urltoimage:pathfile});
+    }
+    catch{
+        return res.json({status:success,message:"Error while adding location"});
     }
     
-      catch{
-          return res.json({status:success,message:"Error while adding location"});
-      }
+      
 
 
 })
+app.delete("/deletelocation/:id",async(req,res)=>{
+    // console.log("reach api");
+     let success=false;
+    try{
+        let findlocation =await locationdetails.findById(req.params.id);
+        if(!findlocation){
+            return res.send({success,error:"NOT Found"});
+        }
+        let deletelocation=await locationdetails.findByIdAndDelete(req.params.id);
+        success=true;
+        return res.json({status:success,message:"Location has been deleted succesfully",deletelocation});
+    }
+      catch{
+          return res.json({status:success,message:"Error while deleting location"});
+      }
+})
 
+app.put("/editlocation/:id",fileupload.single("image"),async (req,res)=>{
+    let pathfile;
+        if(req.file==undefined){
+            pathfile="noimageadded";
+        }
+        else{
+            pathfile=req.file.path;
+        }
+    const {name,location,title,description,besttimetotravel,price,rating}=req.body;
+    let sucess=false;
+    let updatedcon={};
+    if(name){
+        updatedcon.name=name;
+    }
+   
+    if(location){
+        updatedcon.location=location;
+    }
+   
+    if(title){
+        updatedcon.title=title;
+    }
+   
+    if(description){
+        updatedcon.description=description;
+    }
+   
+    if(besttimetotravel){
+        updatedcon.besttimetotravel=besttimetotravel;
+    }
+   
+    if(price){
+        updatedcon.price=price;
+    }
+    if(rating){
+        updatedcon.rating=rating;
+    }
+    if(pathfile!="noimageadded"){
+        updatedcon.image=pathfile;
+    }
+    let findlocation=await locationdetails.findById(req.params.id);
+    if(!findlocation){
+        return res.send({sucess,error:"NOT Found"});
+    }
+    updatedcon=await locationdetails.findByIdAndUpdate(req.params.id,{$set:updatedcon},{new:true});
+    sucess=true;
+    return res.status(200).send({sucess,status:"Succesfully Updated",updatedcon});
 
+})
 
 app.listen(9002,()=>{
     console.log("BE started at port 9002")

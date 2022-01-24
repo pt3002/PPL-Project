@@ -49,12 +49,13 @@ const AddPlaceForm = (props) => {
 
     useEffect(() => {
         if (!file) {
+            setfile(null);
             return;
         }
         const filereader = new FileReader();
         filereader.onload = () => {
             setprewurl(filereader.result);
-            //  console.log(file);
+             console.log(file);
         }
         filereader.readAsDataURL(file);
     }, [file, prewurl]);
