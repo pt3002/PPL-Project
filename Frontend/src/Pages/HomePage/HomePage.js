@@ -34,7 +34,7 @@ const HomePage = () => {
                     }>
                     <ul>
                         <li>
-                            <NavLink to="/aboutus">About Us</NavLink>
+                            <NavLink className="navbaritem" to="/aboutus">About Us</NavLink>
                         </li>
                         <li class="dropdown">
                             <button className="btn dropdown-toggle" style={{ fontSize: 17 }} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,19 +48,19 @@ const HomePage = () => {
                             </div>
                         </li> 
                         <li>
-                            <NavLink to="/filterpage">Apply Filter</NavLink>
+                            <NavLink className="navbaritem" to="/filterpage">Filter By</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/faq">FAQs</NavLink>
+                            <NavLink className="navbaritem" to="/faq">FAQs</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/addplace">Add</NavLink>
+                            <NavLink className="navbaritem" to="/addplace">Add</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/userslist">List of users</NavLink>
+                            <NavLink className="navbaritem" to="/userslist">List of users</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/places">List of places</NavLink>
+                            <NavLink className="navbaritem" to="/places">List of places</NavLink>
                         </li>
                     </ul>
                 </div>

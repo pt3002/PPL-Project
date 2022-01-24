@@ -1,27 +1,12 @@
 .addplaceDiv{
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .rating {
     display: flex;
     flex-direction: row-reverse;
     justify-content: left;
-}
-
-#black-font{
-    color: #000;
-}
-
-.rating>input {
-    display: none
-}
-
-.rating>label {
-    position: relative;
-    width: 1em;
-    font-size: 1vw;
-    color: #FFD600;
-    cursor: pointer
 }
 
 .rating>label::before {
@@ -38,8 +23,45 @@
 .rating>input:checked~label:before {
     opacity: 1
 }
-
-.ADD_FORM{
-    padding:100px;
+.rating>input {
+    display: none
+}
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 1.7vw;
+    color: green;
+    cursor: pointer
+}
+.titleform{
+    font-size: 1.4rem;
 }
 
+.inputArea{
+    padding: 1rem 3rem;
+    width: 35vw;
+    display: block;
+}
+.something{
+    width: 100vw;
+}
+.headingform{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.formbody{
+    margin-top: 30px;
+    
+}
+.inputfield{
+    margin-bottom: 10px;
+}
+.Buttonform{
+    padding: 1rem 4rem;
+    font-size: 1.3rem;
+}
+.imageupload{
+    width: 25vw;
+    display: block;
+}

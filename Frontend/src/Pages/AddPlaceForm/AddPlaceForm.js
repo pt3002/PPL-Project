@@ -55,7 +55,7 @@ const AddPlaceForm = (props) => {
         const filereader = new FileReader();
         filereader.onload = () => {
             setprewurl(filereader.result);
-             console.log(file);
+            console.log(file);
         }
         filereader.readAsDataURL(file);
     }, [file, prewurl]);
@@ -95,32 +95,34 @@ const AddPlaceForm = (props) => {
     return (
 
         <div className="addplaceDiv">
-            <div>
+            <div className="something">
                 <HomePage />
             </div>
             <div className="ADD_FORM">
-                <h4>Fill the Following form to add a place</h4>
-                <form>
-                    <div class="mb-3">
-                        <label for="Place" class="form-label">Name of the Place</label>
-                        <input
+                <div className="headingform">
+                    <h2>Fill the Following form to add a place!</h2>
+                </div>
+                <form className="formbody" >
+                    <div className="inputfield">
+                        <label className="titleform" for="Place" >Name of the Place</label>
+                        <input className="inputArea"
                             onChange={(e) => setPlace(e.target.value)}
-                            value={place} type="text" class="form-control" id="Place" placeholder="eg Taj Mahal"></input>
+                            value={place} type="text" id="Place" placeholder="eg Taj Mahal"></input>
                     </div>
-                    <div class="mb-3">
-                        <label for="bestTimeToVisit" class="form-label">Best time to Visit the Place</label>
-                        <input
+                    <div className="inputfield">
+                        <label className="titleform" for="bestTimeToVisit" >Best time to Visit the Place</label>
+                        <input className="inputArea"
                             onChange={(e) => setBestTime(e.target.value)}
-                            value={bestTime} type="text" class="form-control" id="bestTimeToVisit" placeholder="eg June - Sept"></input>
+                            value={bestTime} type="text" id="bestTimeToVisit" placeholder="eg June - Sept"></input>
                     </div>
-                    <div class="mb-3">
-                        <label for="estimatedCost" class="form-label">Estimated Cost (in ₹)</label>
-                        <input
+                    <div className="inputfield">
+                        <label className="titleform" for="estimatedCost" >Estimated Cost (in ₹)</label>
+                        <input className="inputArea"
                             onChange={(e) => setEstimatedCost(e.target.value)}
                             value={cost}
-                            type="number" class="form-control" id="estimatedCost" placeholder="5000"></input>
+                            type="number" id="estimatedCost" placeholder="5000"></input>
                     </div>
-                    <label for="rating" class="form-label" id="black-font">Rating</label>
+                    <label className="titleform" for="rating" id="black-font">Rating</label>
                     <div class="rating">
                         <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="5" id="5"></input>
                         <label for="5">☆</label>
@@ -133,18 +135,18 @@ const AddPlaceForm = (props) => {
                         <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="1" id="1"></input>
                         <label for="1">☆</label>
                     </div>
-                    <div class="mb-3">
-                        <label for="image" class="form-label">Upload an image</label>
-                        <input class="form-control form-control-sm" id="image" onChange={pickhandler} type="file" name="myImage" accept=".jpg,.png,.jpeg" ></input>
+                    <div className="inputfield">
+                        <label className="titleform" for="image" >Upload an image</label>
+                        <input className="imageupload" id="image" onChange={pickhandler} type="file" name="myImage" accept=".jpg,.png,.jpeg" ></input>
                     </div>
-                    <div class="mb-3">
-                        <label for="Description" class="form-label">Description</label>
-                        <textarea
+                    <div className="inputfield">
+                        <label className="titleform" for="Description" >Description</label>
+                        <textarea className="inputArea"
                             onChange={(e) => setDescription(e.target.value)}
                             value={description}
-                            class="form-control" id="Description" rows="3"></textarea>
+                            id="Description" rows="3"></textarea>
                     </div>
-                    <button type="submit" onClick={addlocation} class="btn btn-primary">Submit</button>
+                    <button className="Buttonform" type="submit" onClick={addlocation}>Submit</button>
                 </form>
 
                 <img src={`http://localhost:9002/${fetchurl}`} alt="no image" />
