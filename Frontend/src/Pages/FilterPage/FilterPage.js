@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./FilterPage.css";
@@ -23,12 +22,10 @@ const FilterPage = () => {
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="20000">Under 20k</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="40000">20k - 40k</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="60000">40k - 60k</button>
-                <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="1000000">60k - 100k</button>
-                <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="5000000">Over 100k</button>
+                <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="100000">60k - 100k</button>
+                <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="500000">Over 100k</button>
                 {cost!='' &&
-                    <button className="btn btn-large btn-warning">
-                        <NavLink to="/filter" category="price" price={cost}>See filtered places according to cost?</NavLink>
-                    </button>
+                    <Filter category={"price"} price={cost}/>
                 }
             </div>
             <div className="ml-2">
