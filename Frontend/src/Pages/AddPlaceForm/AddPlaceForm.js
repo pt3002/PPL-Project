@@ -8,7 +8,9 @@ const AddPlaceForm = (props) => {
     // const name="Siddhesh Pawar"
     const { setPlaces } = props;
     const [place, setPlace] = useState('');
-    const [bestTime, setBestTime] = useState('');
+    const [bestTimeFrom, setBestTimeFrom] = useState('');
+    const [bestTimeTo, setBestTimeTo] = useState('');
+    const bestTime = bestTimeFrom.concat('-', bestTimeTo);
     const [cost, setEstimatedCost] = useState('');
     const [description, setDescription] = useState('');
     const [rating, setrating] = useState('');
@@ -64,11 +66,6 @@ const AddPlaceForm = (props) => {
 
     }, [fetchurl]);
 
-
-
-
-
-
     const pickhandler = (event) => {
         console.log("hello");
         console.log(event.target.files);
@@ -102,7 +99,7 @@ const AddPlaceForm = (props) => {
                 <div className="headingform">
                     <h2>Fill the Following form to add a place!</h2>
                 </div>
-                <div className="formbody">
+                <div className="formbody" >
                     <form>
                         <div className="inputfield">
                             <label className="titleform" for="Place" >Name of the Place</label>
@@ -111,16 +108,52 @@ const AddPlaceForm = (props) => {
                                 value={place} type="text" id="Place" placeholder="eg Taj Mahal"></input>
                         </div>
                         <div className="inputfield">
-                            <label className="titleform" for="bestTimeToVisit" >Best time to Visit the Place</label>
-                            <input className="inputArea"
-                                onChange={(e) => setBestTime(e.target.value)}
-                                value={bestTime} type="text" id="bestTimeToVisit" placeholder="eg June - Sept"></input>
+                            <label className="titleform mx-2" for="From" >Best Time to visit From: </label>
+                            <input
+                                onChange={(e) => setBestTimeFrom(e.target.value)}
+                                value={bestTimeFrom}
+                                list="months" name="from" id="from" />
+                            <datalist id="months">
+                                <option value="January" />
+                                <option value="February" />
+                                <option value="March" />
+                                <option value="April" />
+                                <option value="May" />
+                                <option value="June" />
+                                <option value="July" />
+                                <option value="August" />
+                                <option value="September" />
+                                <option value="October" />
+                                <option value="November" />
+                                <option value="December" />
+                            </datalist>
+                            <label className="titleform mx-2" for="To" > - To: </label>
+                            <input
+                                onChange={(e) => setBestTimeTo(e.target.value)}
+                                value={bestTimeTo}
+                                list="months" name="to" id="to" />
+                            <datalist id="months">
+                                <option value="January" />
+                                <option value="February" />
+                                <option value="March" />
+                                <option value="April" />
+                                <option value="May" />
+                                <option value="June" />
+                                <option value="July" />
+                                <option value="August" />
+                                <option value="September" />
+                                <option value="October" />
+                                <option value="November" />
+                                <option value="December" />
+                            </datalist>
                         </div>
                         <div className="inputfield">
                             <label className="titleform" for="estimatedCost" >Estimated Cost (in ₹)</label>
                             <input className="inputArea"
                                 onChange={(e) => setEstimatedCost(e.target.value)}
                                 value={cost}
+                                min="0"
+                                step="500"
                                 type="number" id="estimatedCost" placeholder="5000"></input>
                         </div>
                         <label className="titleform" for="rating" id="black-font">Rating</label>
@@ -153,6 +186,7 @@ const AddPlaceForm = (props) => {
                 <img src={`http://localhost:9002/${fetchurl}`} alt="no image" />
             </div>
 
+            {/* <h1>{bestTime}</h1> */}
         </div>
     );
 }
