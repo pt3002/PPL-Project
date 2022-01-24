@@ -15,6 +15,7 @@ import Places from './Pages/Places/Places';
 import FilterPage from './Pages/FilterPage/FilterPage';
 import Filter from './Pages/Filter/Filter';
 import FilterRating from './Pages/FilterPage/FilterRating';
+import FilterCreator from './Pages/FilterPage/FilterCreator';
 
 const App = () => {
 
@@ -73,6 +74,7 @@ const App = () => {
           <Route path="/filterrating">
             <FilterRating />
           </Route>
+          <Route path="/filtercreator" render={()=> <FilterCreator places={places}/>} />
           <Route path="/places" render={() => <Places places={places} />} />
           <Route path="/userslist" render={() => <UsersList lists={lists} />} />
         </Switch>

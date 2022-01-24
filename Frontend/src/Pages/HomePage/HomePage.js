@@ -44,7 +44,7 @@ const HomePage = () => {
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterpage">Price</a>
                                 <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterrating">Rating</a>
-                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterpage">Creator</a>
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filtercreator">Creator</a>
                             </div>
                         </li> 
                         <li>

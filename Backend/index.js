@@ -128,7 +128,7 @@ app.get('/placesover100k',(req,res)=>{
 
 //rating 1
 app.get('/rating1',(req,res)=>{
-    locationdetails.find({ rating:1 })
+    locationdetails.find({ rating: {$gt:0}})
         .then(user=>res.json(user))
         .catch(err=>res.json("No such place"))
 })
