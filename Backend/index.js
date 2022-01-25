@@ -172,6 +172,11 @@ app.get('/rating5', (req, res) => {
         .then(user => res.json(user))
         .catch(err => res.json("No such place"))
 })
+app.get('/getlocation/:id', (req, res) => {
+    locationdetails.findById(req.params.id)
+        .then(user => res.json(user))
+        .catch(err => res.json("No such place"))
+})
 
 const fileupload = require("./middleware/locationimage");
 app.post("/addlocationdetails", fileupload.single("image"), async (req, res) => {

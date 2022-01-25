@@ -24,9 +24,10 @@ const AddPlaceForm = (props) => {
     const addlocation = async (e) => {
         e.preventDefault();
         console.log("addcontactworks");
+        let name=localStorage.getItem("name");
         const formdata = new FormData();
         if(place && cost && description && bestTime && rating && file){
-        formdata.append("name", props.name);
+        formdata.append("name", name);
         formdata.append("title", place);
         formdata.append("price", cost);
         formdata.append("description", description);

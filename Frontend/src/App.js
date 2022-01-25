@@ -17,6 +17,7 @@ import Filter from './Pages/Filter/Filter';
 import FilterRating from './Pages/FilterPage/FilterRating';
 import FilterCreator from './Pages/FilterPage/FilterCreator';
 import UserED from './Pages/UserED/UserED';
+import EditLocation from './Pages/EditLocation/EditLocation';
 
 const App = () => {
 
@@ -82,6 +83,9 @@ const App = () => {
           <Route path="/userslist" render={() => <UsersList lists={lists} />} />
           <Route path="/usered">
             <UserED name={user.name}/>
+          </Route>
+          <Route path="/editlocation/:id">
+          <EditLocation/>
           </Route>
         </Switch>
       </Router>

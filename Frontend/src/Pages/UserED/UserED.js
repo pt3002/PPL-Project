@@ -3,9 +3,10 @@ import { propTypes } from "react-bootstrap/esm/Image";
 import axios from "axios";
 import "../FilterPage/FilterPage.css";
 import HomePage from "../HomePage/HomePage";
+import { useHistory } from "react-router-dom";
 
 const UserED = () => {
-
+    const history = useHistory()
     const [places, setplaces] = useState([]);
     useEffect(() => {
         let name=localStorage.getItem("name");
@@ -13,7 +14,7 @@ const UserED = () => {
           .then(res => setplaces(res.data))
           .catch(error => console.log(error));
       }, [])
-    //   console.log(places)
+      console.log(places)
     
     const Deletelocation=(id)=>{
         console.log(id);
@@ -21,13 +22,15 @@ const UserED = () => {
           .then(res => console.log("deleted"))
           .catch(error => console.log(error));
     }
-    const Editlocation=(id)=>{
-        console.log(id);
-        axios.put(`http://localhost:9002/deletelocation/${id}`)
-          .then(res => console.log("edited"))
-          .catch(error => console.log(error));
-    }
-
+    // const Editlocation=(id)=>{
+    //     console.log(id);
+    //     axios.put(`http://localhost:9002/deletelocation/${id}`)
+    //       .then(res => console.log("edited"))
+    //       .catch(error => console.log(error));
+    // }
+     const gotoeditpage=(id)=>{
+         history.push(`/editlocation/${id}`)
+     }
 
     return (
         <div className="filterpagediv">
@@ -48,7 +51,7 @@ const UserED = () => {
                                     <p class="feedback_testimonial">Description : {place.description}</p>
                                     <p class="author_testimonial">Price : {place.price}</p>
                                     <button onClick={()=>Deletelocation(place._id)}>Delete</button>
-                                    <button onClick={Editlocation}>Edit</button>
+                                    <button onClick={()=>gotoeditpage(place._id)}>Edit</button>
                                 </div>
                             </div>
                         )
