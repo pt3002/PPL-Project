@@ -21,10 +21,12 @@ import UserED from './Pages/UserED/UserED';
 const App = () => {
 
   const [user, setLoginUser] = useState({})
-
+  if(user.name!=undefined){
+    localStorage.setItem("name",user.name);
+  }
   //Users List
   const [lists, setLists] = useState([])
-
+   
   //Places List
   const [places, setPlaces] = useState([])
   //Axios for User list
@@ -78,7 +80,9 @@ const App = () => {
           <Route path="/filtercreator" render={()=> <FilterCreator places={places}/>} />
           <Route path="/places" render={() => <Places places={places} />} />
           <Route path="/userslist" render={() => <UsersList lists={lists} />} />
-          <Route path="/usered" render={() => <UserED places={places}/>} />
+          <Route path="/usered">
+            <UserED name={user.name}/>
+          </Route>
         </Switch>
       </Router>
 

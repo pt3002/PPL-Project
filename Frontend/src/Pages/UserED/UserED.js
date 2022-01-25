@@ -1,10 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { propTypes } from "react-bootstrap/esm/Image";
-
+import axios from "axios";
 import "../FilterPage/FilterPage.css";
 import HomePage from "../HomePage/HomePage";
 
-const UserED = ({ places,name }) => {
+const UserED = () => {
+
+    const [places, setplaces] = useState([]);
+    useEffect(() => {
+        let name=localStorage.getItem("name");
+        axios.get(`http://localhost:9002/places/${name}`)
+          .then(res => setplaces(res.data))
+          .catch(error => console.log(error));
+      }, [])
+    //   console.log(places)
+    
+    const Deletelocation=(id)=>{
+        console.log(id);
+        axios.delete(`http://localhost:9002/deletelocation/${id}`)
+          .then(res => console.log("deleted"))
+          .catch(error => console.log(error));
+    }
+    const Editlocation=(id)=>{
+        console.log(id);
+        axios.put(`http://localhost:9002/deletelocation/${id}`)
+          .then(res => console.log("edited"))
+          .catch(error => console.log(error));
+    }
+
+
     return (
         <div className="filterpagediv">
             <div>
@@ -23,6 +47,8 @@ const UserED = ({ places,name }) => {
                                     <h2>Rating : {place.rating}</h2>
                                     <p class="feedback_testimonial">Description : {place.description}</p>
                                     <p class="author_testimonial">Price : {place.price}</p>
+                                    <button onClick={()=>Deletelocation(place._id)}>Delete</button>
+                                    <button onClick={Editlocation}>Edit</button>
                                 </div>
                             </div>
                         )

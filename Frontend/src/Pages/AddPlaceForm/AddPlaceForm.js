@@ -6,6 +6,7 @@ import HomePage from "../HomePage/HomePage";
 
 const AddPlaceForm = (props) => {
     // const name="Siddhesh Pawar"
+    console.log(props.name);
     const { setPlaces } = props;
     const [place, setPlace] = useState('');
     const [bestTimeFrom, setBestTimeFrom] = useState('');

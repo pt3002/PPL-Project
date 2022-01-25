@@ -89,6 +89,12 @@ app.get('/places', (req, res) => {
         .then(user => res.json(user))
         .catch(err => res.status(400).res.json(`Error:${err}`))
 })
+app.get('/places/:name', (req, res) => {
+    // console.l
+    locationdetails.find({name:req.params.name})
+        .then(user => res.json(user))
+        .catch(err => res.status(400).res.json(`Error:${err}`))
+})
 
 app.get('/creatorfilter',(req,res) => {
     const { name } = req.body
