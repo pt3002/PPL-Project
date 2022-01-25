@@ -90,6 +90,12 @@ app.get('/places', (req, res) => {
         .catch(err => res.status(400).res.json(`Error:${err}`))
 })
 
+app.get('/creatorfilter',(req,res) => {
+    const { name } = req.body
+    locationdetails.find({name :name})
+        .then(user => res.json(user))
+        .catch(err=>res.json("No places"))
+})
 
 //router for places under 20k
 app.get('/placesunder20k', (req, res) => {

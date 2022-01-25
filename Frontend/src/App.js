@@ -74,7 +74,7 @@ const App = () => {
           <Route path="/filterrating">
             <FilterRating />
           </Route>
-          <Route path="/filtercreator" render={() => <FilterCreator places={places} />} />
+          <Route path="/filtercreator" render={()=> <FilterCreator places={places}/>} />
           <Route path="/places" render={() => <Places places={places} />} />
           <Route path="/userslist" render={() => <UsersList lists={lists} />} />
         </Switch>

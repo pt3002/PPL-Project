@@ -24,6 +24,7 @@ const AddPlaceForm = (props) => {
         e.preventDefault();
         console.log("addcontactworks");
         const formdata = new FormData();
+        if(place && cost && description && bestTime && rating && file){
         formdata.append("name", props.name);
         formdata.append("title", place);
         formdata.append("price", cost);
@@ -45,7 +46,11 @@ const AddPlaceForm = (props) => {
             // console.log(json.urltoimage);
             setfetchurl(json.urltoimage);
             placeadded();
+            alert("Your form has been submitted !!");
             // console.log(fetchurl);
+        }}
+        else{
+            alert("Please fill the form completely");
         }
     }
 
