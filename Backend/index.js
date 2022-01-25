@@ -27,7 +27,11 @@ mongoose.connect("mongodb://localhost:27017/PPL_backend", {
 const userSchema = new mongoose.Schema({
     name: String,
     email: String,
-    password: String
+    password: String,
+    stay: String,
+    description : String,
+    contactno: String,
+    interests: String
 })
 
 //Model creation(2)
@@ -52,7 +56,7 @@ app.post("/login", (req, res) => {
 })
 
 app.post("/signup", (req, res) => {
-    const { name, email, password } = req.body
+    const { name, email, password, stay, description , contactno, interests} = req.body
     User.findOne({ email: email }, (err, user) => {
         if (user) {
             res.send({ message: "User aleady registered" })
@@ -61,7 +65,11 @@ app.post("/signup", (req, res) => {
             const user = new User({
                 name,
                 email,
-                password
+                password,
+                stay,
+                description,
+                contactno,
+                interests
             })
             user.save(err => {
                 if (err) {

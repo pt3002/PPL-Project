@@ -18,11 +18,11 @@ const WelcomePage = () => {
                 wrapper="b"
                 steps={[
                     'Travel' ,
-                    100000,
+                    1000,
                     'Discover',
-                    100000,
+                    1000,
                     'Blog',
-                    100000
+                    1000
                 ]}
             />
         </p>
