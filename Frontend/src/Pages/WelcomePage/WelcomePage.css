@@ -1,0 +1,16 @@
+.welcomediv{
+    margin-top: 240px;
+    width:50%;
+    margin-left: 35%;
+
+}
+
+.welcomeh1{
+    color: black;
+    padding: 40px;
+}
+
+.welcomep{
+    line-height: 25px;
+    font-size: 4.5rem;
+}
