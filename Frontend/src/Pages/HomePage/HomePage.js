@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@popperjs/core";
 import "bootstrap";
-import { Nav, NavDropdown } from "react-bootstrap";
+import { FaUser } from "react-icons/fa";
 import {
     FaFacebookSquare,
     FaInstagramSquare,
@@ -14,8 +14,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import { NavLink } from "react-router-dom";
 
-const HomePage = () => {
+const HomePage = (props) => {
+    console.log(props.name);
     const [showMediaIcons, setShowMediaIcons] = useState(false);
+
+    const logOut = async (e) => {
+        alert("Logged out successfully");
+    }
     return (
         <>
             <nav className="main-nav">
@@ -33,9 +38,11 @@ const HomePage = () => {
                         showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
                     }>
                     <ul>
+                        {/* list of places */}
                         <li>
-                            <NavLink className="navbaritem" to="/aboutus">About Us</NavLink>
+                            <NavLink className="navbaritem" to="/places">List of places</NavLink>
                         </li>
+                        {/* filter by  */}
                         <li class="dropdown">
                             <button className="btn dropdown-toggle" style={{ fontSize: 17 }} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Filter By
@@ -47,17 +54,35 @@ const HomePage = () => {
                                 <a className="dropdown-item" style={{ fontSize: 17 }} href="/filtercreator">Creator</a>
                             </div>
                         </li>
-                        <li>
-                            <NavLink className="navbaritem" to="/faq">FAQs</NavLink>
-                        </li>
+                        {/* add place */}
                         <li>
                             <NavLink className="navbaritem" to="/addplace">Add</NavLink>
                         </li>
+                        {/* faq */}
+                        <li>
+                            <NavLink className="navbaritem" to="/faq">FAQs</NavLink>
+                        </li>
+                        {/* about us page */}
+                        <li>
+                            <NavLink className="navbaritem" to="/aboutus">About Us</NavLink>
+                        </li>
+
+                        {/* list of users */}
                         <li>
                             <NavLink className="navbaritem" to="/userslist">List of users</NavLink>
                         </li>
-                        <li>
-                            <NavLink className="navbaritem" to="/places">List of places</NavLink>
+
+                        {/* profile user */}
+                        <li class="dropdown">
+                            <button className="btn dropdown-toggle" style={{ fontSize: 17 }} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span className="mx-2">{props.name}</span><FaUser />
+                            </button>
+
+                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/faq">Profile</a>
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/usered">Edit/Delete Places</a>
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/login" onClick={logOut}>Log out</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -96,6 +121,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </nav>
+            <h1>{props.name}</h1>
 
             {/* hero section  */}
 

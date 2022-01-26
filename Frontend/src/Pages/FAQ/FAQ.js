@@ -30,9 +30,9 @@ const FAQ = () => {
           <h2>Frequently Asked Questions</h2>
           <div className="accordion">
             <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-1")} id="accordion-button-1" aria-expanded="false"><span className="accordion-title">Why is the moon sometimes out during the day?</span><span className="icon" aria-hidden="true"></span></button>
+              <button onClick={() => toggleAccordion("accordion-button-1")} id="accordion-button-1" aria-expanded="false"><span className="accordion-title">What is the answer to the ultimate Question of the life the universe and everything?</span><span className="icon" aria-hidden="true"></span></button>
               <div className="accordion-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                <p>42- "DON'T PANIC!"</p>
               </div>
             </div>
             <div className="accordion-item">

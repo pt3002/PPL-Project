@@ -24,34 +24,35 @@ const AddPlaceForm = (props) => {
     const addlocation = async (e) => {
         e.preventDefault();
         console.log("addcontactworks");
-        let name=localStorage.getItem("name");
+        let name = localStorage.getItem("name");
         const formdata = new FormData();
-        if(place && cost && description && bestTime && rating && file){
-        formdata.append("name", name);
-        formdata.append("title", place);
-        formdata.append("price", cost);
-        formdata.append("description", description);
-        formdata.append("besttimetotravel", bestTime);
-        formdata.append("rating", rating);
-        formdata.append("image", file);
-        // for (var key of formdata.entries()) {
-        // 	console.log(key[0] + ', ' + key[1])
-        // }
-        let url = "http://localhost:9002/addlocationdetails";
-        let response = await fetch(url, {
-            method: 'POST',
-            body: formdata
-        });
-        const json = await response.json();
-        console.log(json);
-        if (json.status) {
-            // console.log(json.urltoimage);
-            setfetchurl(json.urltoimage);
-            placeadded();
-            alert("Your form has been submitted !!");
-            // console.log(fetchurl);
-        }}
-        else{
+        if (place && cost && description && bestTime && rating && file) {
+            formdata.append("name", name);
+            formdata.append("title", place);
+            formdata.append("price", cost);
+            formdata.append("description", description);
+            formdata.append("besttimetotravel", bestTime);
+            formdata.append("rating", rating);
+            formdata.append("image", file);
+            // for (var key of formdata.entries()) {
+            // 	console.log(key[0] + ', ' + key[1])
+            // }
+            let url = "http://localhost:9002/addlocationdetails";
+            let response = await fetch(url, {
+                method: 'POST',
+                body: formdata
+            });
+            const json = await response.json();
+            console.log(json);
+            if (json.status) {
+                // console.log(json.urltoimage);
+                setfetchurl(json.urltoimage);
+                placeadded();
+                alert("Your form has been submitted !!");
+                // console.log(fetchurl);
+            }
+        }
+        else {
             alert("Please fill the form completely");
         }
     }

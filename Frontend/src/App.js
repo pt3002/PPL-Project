@@ -22,12 +22,12 @@ import EditLocation from './Pages/EditLocation/EditLocation';
 const App = () => {
 
   const [user, setLoginUser] = useState({})
-  if(user.name!=undefined){
-    localStorage.setItem("name",user.name);
+  if (user.name != undefined) {
+    localStorage.setItem("name", user.name);
   }
   //Users List
   const [lists, setLists] = useState([])
-   
+
   //Places List
   const [places, setPlaces] = useState([])
   //Axios for User list
@@ -50,7 +50,7 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             {
-              user && user._id ? <HomePage setLoginUser={setLoginUser} /> : <WelcomePage />
+              user && user._id ? <HomePage name={user.name} setLoginUser={setLoginUser} /> : <WelcomePage />
             }
           </Route>
           <Route path="/login">
@@ -78,14 +78,14 @@ const App = () => {
           <Route path="/filterrating">
             <FilterRating />
           </Route>
-          <Route path="/filtercreator" render={()=> <FilterCreator places={places}/>} />
+          <Route path="/filtercreator" render={() => <FilterCreator places={places} />} />
           <Route path="/places" render={() => <Places places={places} />} />
           <Route path="/userslist" render={() => <UsersList lists={lists} />} />
           <Route path="/usered">
-            <UserED name={user.name}/>
+            <UserED name={user.name} />
           </Route>
           <Route path="/editlocation/:id">
-          <EditLocation/>
+            <EditLocation />
           </Route>
         </Switch>
       </Router>
