@@ -186,6 +186,14 @@ app.get('/getlocation/:id', (req, res) => {
         .catch(err => res.json("No such place"))
 })
 
+app.get('/getuser/:name', (req, res) => {
+    User.find({ name: req.params.name})
+        .then(user => res.json(user))
+        .catch(err => res.json("No such place"))
+})
+
+
+
 const fileupload = require("./middleware/locationimage");
 app.post("/addlocationdetails", fileupload.single("image"), async (req, res) => {
     // console.log("reach api");
@@ -281,6 +289,17 @@ app.put("/editlocation/:id", fileupload.single("image"), async (req, res) => {
         return res.send({ sucess, error: "NOT Found" });
     }
     updatedcon = await locationdetails.findByIdAndUpdate(req.params.id, { $set: updatedcon }, { new: true });
+    sucess = true;
+    return res.status(200).send({ sucess, status: "Succesfully Updated", updatedcon });
+
+})
+app.put("/editprofile/:id", async (req, res) => {
+    let sucess=false;
+    let findprofile = await User.findById(req.params.id);
+    if (!findprofile) {
+        return res.send({ sucess, error: "NOT Found" });
+    }
+    updatedcon = await User.findByIdAndUpdate(req.params.id, { $set: req.body}, { new: true });
     sucess = true;
     return res.status(200).send({ sucess, status: "Succesfully Updated", updatedcon });
 

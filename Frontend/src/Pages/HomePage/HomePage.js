@@ -79,7 +79,7 @@ const HomePage = (props) => {
                             </button>
 
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/faq">Profile</a>
+                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/editprofile">Profile</a>
                                 <a className="dropdown-item" style={{ fontSize: 17 }} href="/usered">Edit/Delete Places</a>
                                 <a className="dropdown-item" style={{ fontSize: 17 }} href="/login" onClick={logOut}>Log out</a>
                             </div>
