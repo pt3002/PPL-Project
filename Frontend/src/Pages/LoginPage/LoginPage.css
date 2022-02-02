@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
 .login {
     width: 100vw;
     height: 100vh;
@@ -12,21 +12,27 @@
     background-position:center;
 }    
 .loginHeading{
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 900;
     margin-bottom: 2rem;
+    color: black;
+    font-family: 'Quintessential', cursive;
+
     /* text-shadow: 1px 1px 0.2px #32CD32, 0 0 1em rgb(21, 255, 0), 0 0 0.2em #2E8B57; */
 }
 
 .inputClass{
     margin-bottom: 1rem;
     border-radius: 6px;
-    padding: 0.7rem 10rem;
+    width: 30%;
+    padding: 1.3rem 1rem;
+    font-size: 2rem;
 }
 
 button{
     padding: 0.7rem 2.5rem;
     border-radius: 12px;
+    font-size: 2rem;
     margin: 0.5rem;
     color: #fff;
     background-color: black;
@@ -34,7 +40,7 @@ button{
 
 .divOR{
     color: #fff;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 700;
 }
 

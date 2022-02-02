@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
 .signup{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,19 +12,27 @@
     background-position:center;
 }
 .signupHeading{
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 900;
     margin-bottom: 2rem;
+    color: black;
+    font-family: 'Quintessential', cursive;
     /* text-shadow: 1px 1px 0.2px #32CD32, 0 0 1em rgb(21, 255, 0), 0 0 0.2em #2E8B57; */
 }
 
 .inputClass{
     margin-bottom: 1rem;
     border-radius: 6px;
-    padding: 0.7rem 10rem;
-    
+    width: 25%;
+    padding: 0.1rem 1rem;
+    margin-left: 2.5%;
 }
-
+.club {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 button{
     padding: 0.7rem 2.5rem;
     border-radius: 12px;
@@ -35,7 +44,7 @@ button{
 
 .divOR{
     color: #fff;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 700;
 }
 
