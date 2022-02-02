@@ -49,6 +49,16 @@ const AddPlaceForm = (props) => {
                 setfetchurl(json.urltoimage);
                 placeadded();
                 alert("Your form has been submitted !!");
+                setPlace("");
+                setBestTimeFrom("");
+                setBestTimeTo("");
+                setEstimatedCost("");
+                setDescription("");
+                setfile(null);
+                setprewurl("");
+                setfetchurl("");
+                document.getElementById("1").click();
+                document.getElementById("image").value="";
                 // console.log(fetchurl);
             }
         }
@@ -174,7 +184,7 @@ const AddPlaceForm = (props) => {
                             <label for="3">☆</label>
                             <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="2" id="2"></input>
                             <label for="2">☆</label>
-                            <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="1" id="1"></input>
+                            <input  type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="1" id="1"></input>
                             <label for="1">☆</label>
                         </div>
                         <div className="inputfield">
@@ -191,7 +201,9 @@ const AddPlaceForm = (props) => {
                         <button className="Buttonform" type="submit" onClick={addlocation}>Submit</button>
                     </form>
                 </div>
-                <img src={`http://localhost:9002/${fetchurl}`} alt="no image" />
+
+                <img src={prewurl} alt="no image" />
+                
             </div>
 
             {/* <h1>{bestTime}</h1> */}

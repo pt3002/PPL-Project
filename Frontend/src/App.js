@@ -23,7 +23,7 @@ import Editprofile from './Pages/EditProfile/Editprofile';
 const App = () => {
 
   const [user, setLoginUser] = useState({})
-  if (user.name != undefined) {
+  if (user!=undefined &&  user.name != undefined) {
     localStorage.setItem("name", user.name);
   }
   //Users List

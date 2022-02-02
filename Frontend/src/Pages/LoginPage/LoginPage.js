@@ -27,7 +27,7 @@ const LoginPage = ({ setLoginUser }) => {
                 alert(res.data.message)
                 setLoginUser(res.data.user)
                 history.push("/")
-            })
+            }).catch(()=>window. location. reload())
     }
 
     return (
