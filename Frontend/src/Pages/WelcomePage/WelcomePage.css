@@ -23,6 +23,20 @@
     text-shadow: 1px 1px 2px mediumslateblue, 0 0 1em blue, 0 0 0.1em blue;;
 }
 
+.welcomeh1 .welcomesub{
+    width: 100vw;
+    display: flex;
+    color: black;
+    padding: 20px;
+    font-family: 'Quintessential', cursive;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    justify-content: center;
+    align-items: center;
+    color: Navy;
+    text-shadow: 1px 1px 2px mediumslateblue, 0 0 1em blue, 0 0 0.1em blue;;
+}
+
 .welcomep {
     line-height: 25px;
     font-size: 5.5rem;
