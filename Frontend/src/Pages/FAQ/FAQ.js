@@ -30,37 +30,44 @@ const FAQ = () => {
           <h2>Frequently Asked Questions</h2>
           <div className="accordion">
             <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-1")} id="accordion-button-1" aria-expanded="false"><span className="accordion-title">What is the answer to the ultimate Question of the life the universe and everything?</span><span className="icon" aria-hidden="true"></span></button>
+              <button onClick={() => toggleAccordion("accordion-button-1")} id="accordion-button-1" aria-expanded="false"><span className="accordion-title">Will masks be required during this tour?</span><span className="icon" aria-hidden="true"></span></button>
               <div className="accordion-content">
-                <p>42- "DON'T PANIC!"</p>
+                <p>Masks will be required in any place where they are required by the local government (in shops and in restaurants when not seated for a meal, for example), and any time we are unable to socially distance with each other (while traveling in the shuttle van, for example).
+                  There are still inherent risks with traveling while Covid-19 is considered a worldwide pandemic</p>
               </div>
             </div>
             <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-2")} id="accordion-button-2" aria-expanded="false"><span className="accordion-title">Why is the sky blue?</span><span className="icon" aria-hidden="true"></span></button>
+              <button onClick={() => toggleAccordion("accordion-button-2")} id="accordion-button-2" aria-expanded="false"><span className="accordion-title">What clothing should I pack for one of your adventures?</span><span className="icon" aria-hidden="true"></span></button>
               <div className="accordion-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta cumque itaque exercitationem veritatis quo voluptas rem earum eligendi, officiis quas necessitatibus vitae debitis! Tenetur, perspiciatis! Itaque fuga eveniet labore. Quam enim ducimus asperiores, maxime pariatur autem animi velit, quasi aut expedita dicta, eius quas? Fugiat atque rem ad doloribus repudiandae, culpa enim earum quidem similique ut, dolor sunt vel odit at impedit placeat.
+                <p>We always recommend packing as light as possible however the specific requirements for your tour will vary widely depending on where and when you are traveling.
                 </p>
               </div>
             </div>
             <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-3")} id="accordion-button-3" aria-expanded="false"><span className="accordion-title">Will we ever discover aliens?</span><span className="icon" aria-hidden="true"></span></button>
+              <button onClick={() => toggleAccordion("accordion-button-3")} id="accordion-button-3" aria-expanded="false"><span className="accordion-title">Should I know Local Language?</span><span className="icon" aria-hidden="true"></span></button>
               <div className="accordion-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                <p>Learn Common Phrases of the Local Language
+                  A simple “Please,” “Thank you,” and “I'm sorry” in the local language goes a long way.</p>
               </div>
             </div>
             <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-4")} id="accordion-button-4" aria-expanded="false"><span className="accordion-title">How much does the Earth weigh?</span><span className="icon" aria-hidden="true"></span></button>
+              <button onClick={() => toggleAccordion("accordion-button-4")} id="accordion-button-4" aria-expanded="false"><span className="accordion-title">What are some travel safety tips keep in mind?</span><span className="icon" aria-hidden="true"></span></button>
               <div className="accordion-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                <p>
+                  <ul>
+                    <li>Make copies of important documents</li>
+                    <li>Keep your friends and family updated</li>
+                    <li>Be wary of public Wi-Fi</li>
+                  </ul>
+                </p>
 
               </div>
             </div>
             <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-5")} id="accordion-button-5" aria-expanded="false"><span className="accordion-title">How do airplanes stay up?</span><span className="icon" aria-hidden="true"></span></button>
+              <button onClick={() => toggleAccordion("accordion-button-5")} id="accordion-button-5" aria-expanded="false"><span className="accordion-title">Are Vaccinations Required?</span><span className="icon" aria-hidden="true"></span></button>
               <div className="accordion-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi dolorem voluptate reprehenderit. Possimus consequuntur odio expedita sequi veritatis ducimus tempore nobis adipisci magnam illo explicabo aliquid eveniet sunt, saepe autem.
+                <p>
+                  You must have a certificate. We do encourage all travelers to be current on routine immunizations.
                 </p>
               </div>
             </div>
