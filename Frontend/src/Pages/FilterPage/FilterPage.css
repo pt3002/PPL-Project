@@ -1,4 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+
 .filterpagediv{
     width:100vw;
 }
 
+.ml-2{
+    width: 100vw;
+    margin: 2% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quintessential', cursive;
+}
+.ml-2 h1{
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.priceButton{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    
+}
+.ml-2 label{
+    font-size: 3rem;
+}
+.ml-2 input{
+    width: 20%;
+    height: 25px;
+    margin-left: 2.5%;
+}
+.priceButton button{
+    padding: 1rem 2rem;
+    border-radius: 7px;
+    font-size: 2rem;
+    margin-left:25px;
+}

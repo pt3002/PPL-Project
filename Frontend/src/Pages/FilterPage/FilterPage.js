@@ -16,14 +16,14 @@ const FilterPage = () => {
             <div className="ml-2">
                 <h1>Price</h1>
             </div>
-            <div>
+            <div className="priceButton">
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="20000">Under 20k</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="40000">20k - 40k</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="60000">40k - 60k</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="100000">60k - 100k</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="500000">Over 100k</button>
-                {cost!='' &&
-                    <Filter category={"price"} price={cost}/>
+                {cost != '' &&
+                    <Filter category={"price"} price={cost} />
                 }
             </div>
         </div>

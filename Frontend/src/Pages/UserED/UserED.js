@@ -9,18 +9,19 @@ const UserED = () => {
     const history = useHistory()
     const [places, setplaces] = useState([]);
     useEffect(() => {
-        let name=localStorage.getItem("name");
+        let name = localStorage.getItem("name");
         axios.get(`http://localhost:9002/places/${name}`)
-          .then(res => setplaces(res.data))
-          .catch(error => console.log(error));
-      }, [])
-      console.log(places)
-    
-    const Deletelocation=(id)=>{
+            .then(res => setplaces(res.data))
+            .catch(error => console.log(error));
+    }, [])
+    console.log(places)
+
+    const Deletelocation = (id) => {
         console.log(id);
         axios.delete(`http://localhost:9002/deletelocation/${id}`)
-          .then(res => console.log("deleted"))
-          .catch(error => console.log(error));
+            .then(res => console.log("deleted"))
+            .catch(error => console.log(error));
+        window.location.reload(false)
     }
     // const Editlocation=(id)=>{
     //     console.log(id);
@@ -28,9 +29,9 @@ const UserED = () => {
     //       .then(res => console.log("edited"))
     //       .catch(error => console.log(error));
     // }
-     const gotoeditpage=(id)=>{
-         history.push(`/editlocation/${id}`)
-     }
+    const gotoeditpage = (id) => {
+        history.push(`/editlocation/${id}`)
+    }
 
     return (
         <div className="filterpagediv">
@@ -39,7 +40,7 @@ const UserED = () => {
             </div>
             {places.map((place, key) => (
                 (() => {
-                    if (place.name){
+                    if (place.name) {
                         return (
                             <div className="card_testimonial">
                                 <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
@@ -50,14 +51,14 @@ const UserED = () => {
                                     <h2>Rating : {place.rating}</h2>
                                     <p class="feedback_testimonial">Description : {place.description}</p>
                                     <p class="author_testimonial">Price : {place.price}</p>
-                                    <button onClick={()=>Deletelocation(place._id)}>Delete</button>
-                                    <button onClick={()=>gotoeditpage(place._id)}>Edit</button>
+                                    <button onClick={() => Deletelocation(place._id)}>Delete</button>
+                                    <button onClick={() => gotoeditpage(place._id)}>Edit</button>
                                 </div>
                             </div>
                         )
                     }
-                  })()
-            ))} 
+                })()
+            ))}
         </div>
     )
 }

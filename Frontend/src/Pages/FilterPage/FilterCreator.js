@@ -13,8 +13,8 @@ const FilterCreator = ({ places }) => {
             <div>
                 <HomePage />
             </div>
-            <div className="inputfield">
-                <label className="titleform mx-2" for="From" >Choose Creator</label>
+            <div className="ml-2">
+                <label className="titleform mx-2" for="From" >Choose Creator : </label>
                 <input
                     onChange={(e) => setCreator(e.target.value)}
                     value={selectCreator}
@@ -25,15 +25,17 @@ const FilterCreator = ({ places }) => {
                     ))}
                 </datalist>
             </div>
-            <button onClick={() => window.location.reload(false)}>Click here to reset !</button>
+            <div className="priceButton">
+                <button onClick={() => window.location.reload(false)}>Click to Reset</button>
+            </div>
             {places.map((place, key) => (
                 (() => {
-                    if (place.name == selectCreator){
+                    if (place.name == selectCreator) {
                         return (
                             <div className="card_testimonial">
                                 <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                                 <div class="card-content_testimonial">
-                                    <h1>Title : {place.title}</h1>
+                                    <h1> {place.title}</h1>
                                     <h2>Best Time to travel : {place.besttimetotravel}</h2>
                                     <h2>Creator : {place.name} </h2>
                                     <h2>Rating : {place.rating}</h2>
@@ -43,8 +45,8 @@ const FilterCreator = ({ places }) => {
                             </div>
                         )
                     }
-                  })()
-            ))} 
+                })()
+            ))}
         </div>
     )
 }
