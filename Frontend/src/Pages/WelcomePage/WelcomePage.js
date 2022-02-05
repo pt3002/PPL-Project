@@ -11,8 +11,12 @@ const WelcomePage = () => {
 
     return (
         <div className="welcomediv">
-            <div className="welcomeh1">
+            <div className='welcomeh1'>
+                <img src={logo}></img>
                 <h1 className='welcomeheading'>Once a year, go someplace you've never been before</h1>
+
+            </div>
+            <div className='welcomeh1'>
                 <h1 className='welcomesub'>~ Dalai Lama</h1>
             </div>
             <div className="welcomep">
@@ -35,7 +39,6 @@ const WelcomePage = () => {
                 </p>
             </div>
             <div className='welcomeButton'>
-                <img src={logo}></img>
                 <button className="button" onClick={() => history.push("/signup")}>Signup</button>
                 <button className="button" onClick={() => history.push("/login")}>Login</button>
             </div>

@@ -3,10 +3,13 @@
     width:100vw;
     height: 100vh;
     background-image: url("./welcome.jpg") ;
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center;
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.welcomeh1{
+    display: flex;
 }
 
 .welcomeh1 h1{
@@ -15,7 +18,7 @@
     color: black;
     padding: 40px;
     font-family: 'Quintessential', cursive;
-    font-size: 5rem;
+    font-size: 4rem;
     letter-spacing: 2px;
     justify-content: center;
     align-items: center;
@@ -29,7 +32,7 @@
     color: black;
     padding: 20px;
     font-family: 'Quintessential', cursive;
-    font-size: 4rem;
+    font-size: 3.5rem;
     letter-spacing: 2px;
     justify-content: center;
     align-items: center;
@@ -63,4 +66,9 @@
     padding: 1.2rem 3.5rem;
     font-size: 2rem;
     margin: 0 3rem;
+}
+.welcomeh1 img{
+    width: 100px;
+    height: 100px;
+    margin: 15px 25px;
 }
