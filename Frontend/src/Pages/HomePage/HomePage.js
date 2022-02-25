@@ -75,7 +75,7 @@ const HomePage = (props) => {
                         {/* profile user */}
                         <li class="dropdown">
                             <button className="btn dropdown-toggle" style={{ fontSize: 17 }} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span className="mx-2">{props.name}</span><FaUser />
+                                <span className="mx-2">{localStorage.getItem("name")}</span><FaUser />
                             </button>
 
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">

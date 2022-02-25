@@ -29,6 +29,14 @@ const SignUpPage = (props) => {
 
     const signup_api = () => {
         const { name, email, password, reEnterpassword, stay, description, contactno, interests } = user
+        if(password.length<6 || reEnterpassword.length<6){
+           alert("Enter password having length greater that 6");
+           return;
+        }
+        if(contactno-0>9999999999 || contactno-0<1000000000){
+            alert("Enter Valid contact number");
+             return;
+        }
         if (name && email && password && (password === reEnterpassword) && stay && description && contactno && interests) {
             axios.post("http://localhost:9002/signup", user)
                 .then(res => alert(res.data.message))
@@ -59,7 +67,7 @@ const SignUpPage = (props) => {
                 <input className='inputClass' type="password" name="reEnterpassword" value={user.reEnterpassword} placeholder='Re-enter password' onChange={handleChange}></input>
             </div>
             <div className='club'>
-                <input className='inputClass' type="text" name="contactno" value={user.contactno} placeholder='Your contact no.' onChange={handleChange}></input>
+                <input className='inputClass' type="number" name="contactno" value={user.contactno} placeholder='Your contact no.' onChange={handleChange}></input>
                 <input className='inputClass' type="text" name="stay" value={user.stay} placeholder='Where are you from?' onChange={handleChange}></input>
             </div>
             <div className='club'>
