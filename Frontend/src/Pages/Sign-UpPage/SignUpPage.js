@@ -47,10 +47,6 @@ const SignUpPage = (props) => {
         console.log("userupdatedcalled");
     }
 
-
-
-
-
     return (
         <div className="signup">
             <h1 className='signupHeading'>Sign Up</h1>
@@ -59,7 +55,7 @@ const SignUpPage = (props) => {
                 <input className='inputClass' type="text" name="email" value={user.email} placeholder='Your email' onChange={handleChange}></input>
             </div>
             <div className='club'>
-                <input className='inputClass' type="password" name="password" value={user.password} placeholder='Your password' onChange={handleChange}></input>
+                <input className='inputClass' type="password" name="password" min="5" max="999" value={user.password} placeholder='Your password' onChange={handleChange}></input>
                 <input className='inputClass' type="password" name="reEnterpassword" value={user.reEnterpassword} placeholder='Re-enter password' onChange={handleChange}></input>
             </div>
             <div className='club'>

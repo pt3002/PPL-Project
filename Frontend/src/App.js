@@ -64,8 +64,8 @@ const App = () => {
           <Route path="/faq">
             <FAQ name={user.name} />
           </Route>
-          <Route path="/aboutus" name={user.name}>
-            <AboutUs />
+          <Route path="/aboutus">
+            <AboutUs name={user.name}/>
           </Route>
           <Route path="/addplace">
             <AddPlaceForm name={user.name} setPlaces={setPlaces} setLoginUser={setLoginUser} />
@@ -86,7 +86,7 @@ const App = () => {
             <UserED name={user.name} />
           </Route>
           <Route path="/editprofile">
-            <Editprofile/>
+            <Editprofile name={user.name}/>
           </Route>
           <Route path="/editlocation/:id">
             <EditLocation />

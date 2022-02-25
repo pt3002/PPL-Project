@@ -5,7 +5,7 @@ import "../FilterPage/FilterPage.css";
 import HomePage from "../HomePage/HomePage";
 import { useHistory } from "react-router-dom";
 
-const UserED = () => {
+const UserED = (props) => {
     const history = useHistory()
     const [places, setplaces] = useState([]);
     useEffect(() => {
@@ -36,7 +36,7 @@ const UserED = () => {
     return (
         <div className="filterpagediv">
             <div>
-                <HomePage />
+                <HomePage name={props.name}/>
             </div>
             {places.map((place, key) => (
                 (() => {
