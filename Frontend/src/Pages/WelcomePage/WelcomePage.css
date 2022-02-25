@@ -22,8 +22,8 @@
     letter-spacing: 2px;
     justify-content: center;
     align-items: center;
-    color: Navy;
-    text-shadow: 1px 1px 2px mediumslateblue, 0 0 1em blue, 0 0 0.1em blue;;
+    color: Navy; 
+    text-shadow: 1px 1px 2px mediumslateblue, 0 0 1em blue, 0 0 0.1em blue;
 }
 
 .welcomeh1 .welcomesub{
@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
     color: Navy;
-    text-shadow: 1px 1px 2px mediumslateblue, 0 0 1em blue, 0 0 0.1em blue;;
+    text-shadow: 1px 1px 2px mediumslateblue, 0 0 1em blue, 0 0 0.1em blue;
 }
 
 .welcomep {
@@ -51,7 +51,7 @@
     align-items: center;
     margin-top: 5%;
     color: #006400;
-    text-shadow: 1px 1px 2px LightYellow, 0 0 1em yellow, 0 0 0.1em lawngreen;;
+    text-shadow: 1px 1px 2px LightYellow, 0 0 1em yellow, 0 0 0.1em lawngreen;
 }
 
 .welcomeButton{

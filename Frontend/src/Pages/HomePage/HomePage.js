@@ -99,14 +99,14 @@ const HomePage = (props) => {
                         </li>
                         <li>
                             <a
-                                href="https://www.instagram.com/thapatechnical/"
+                                href="https://www.instagram.com/"
                                 target="#">
                                 <FaInstagramSquare className="instagram" />
                             </a>
                         </li>
                         <li>
                             <a
-                                href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
+                                href="https://www.youtube.com/"
                                 target="#">
                                 <FaYoutubeSquare className="youtube" />
                             </a>
