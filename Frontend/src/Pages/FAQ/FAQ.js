@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./FAQ.css";
 import HomePage from "../HomePage/HomePage";
 
-const FAQ = () => {
+const FAQ = (props) => {
   function toggleAccordion(id) {
     const items = document.querySelectorAll(".accordion button");
     const itemToggle = document.getElementById(id).getAttribute('aria-expanded');
@@ -23,7 +23,7 @@ const FAQ = () => {
   return (
     <div className="faqdiv">
       <div>
-        <HomePage />
+        <HomePage name={props.name}/>
       </div>
       <div>
         <div className="containerofFAQ">

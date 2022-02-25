@@ -7,7 +7,7 @@ const UsersList = ({ lists }) => {
     return (
         <div className="userslistdiv">
             <div>
-                <HomePage />
+                <HomePage name={name} />
             </div>
             {lists.map((user, key) => (
                 <div class="card_testimonial1">

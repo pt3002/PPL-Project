@@ -62,26 +62,26 @@ const App = () => {
             <SignUpPage setLists={setLists} />
           </Route>
           <Route path="/faq">
-            <FAQ />
+            <FAQ name={user.name} />
           </Route>
-          <Route path="/aboutus">
+          <Route path="/aboutus" name={user.name}>
             <AboutUs />
           </Route>
           <Route path="/addplace">
             <AddPlaceForm name={user.name} setPlaces={setPlaces} setLoginUser={setLoginUser} />
           </Route>
           <Route path="/filterpage">
-            <FilterPage />
+            <FilterPage name={user.name}/>
           </Route>
           <Route path="/filter">
-            <Filter />
+            <Filter name={user.name}/>
           </Route>
           <Route path="/filterrating">
-            <FilterRating />
+            <FilterRating name={user.name}/>
           </Route>
-          <Route path="/filtercreator" render={() => <FilterCreator places={places} />} />
-          <Route path="/places" render={() => <Places places={places} />} />
-          <Route path="/userslist" render={() => <UsersList lists={lists} />} />
+          <Route path="/filtercreator" render={() => <FilterCreator places={places} name={user.name}/>} />
+          <Route path="/places" render={() => <Places places={places} name={user.name}/>} />
+          <Route path="/userslist" render={() => <UsersList lists={lists} name={user.name}/>} />
           <Route path="/usered">
             <UserED name={user.name} />
           </Route>
