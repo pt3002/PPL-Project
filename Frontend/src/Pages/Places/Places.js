@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import "./Places.css";
 import HomePage from "../HomePage/HomePage";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-const Places = ({ places }) => {
+const Places = ({ name,places }) => {
     return (
         <div className="placesdiv">
             <div>
-                <HomePage />
+                <HomePage name={name}/>
             </div>
 
             {places.map((place, key) => (

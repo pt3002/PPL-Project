@@ -3,14 +3,15 @@ import React, { useState, useEffect } from "react";
 import "./FilterPage.css";
 import HomePage from "../HomePage/HomePage";
 import Filter from "../Filter/Filter";
+import { responsivePropType } from "react-bootstrap/esm/createUtilityClasses";
 
-const FilterRating = () => {
+const FilterRating = (props) => {
     const [rating, setRating] = useState('');
 
     return (
         <div className="filterpagediv">
             <div>
-                <HomePage />
+                <HomePage name={props.name}/>
             </div>
             <div className="ml-2">
                 <h1>Rating</h1>

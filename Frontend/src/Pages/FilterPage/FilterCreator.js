@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./FilterPage.css";
 import HomePage from "../HomePage/HomePage";
 
-const FilterCreator = ({ places }) => {
+const FilterCreator = ({ name,places }) => {
     let creators = places.map(place => place.name);
     creators = [...new Set(creators)];
     const [selectCreator, setCreator] = useState('');
@@ -11,7 +11,7 @@ const FilterCreator = ({ places }) => {
     return (
         <div className="filterpagediv">
             <div>
-                <HomePage />
+                <HomePage name={name}/>
             </div>
             <div className="ml-2">
                 <label className="titleform mx-2" for="From" >Choose Creator : </label>

@@ -3,11 +3,11 @@ import React, { useState,useEffect } from "react";
 import "./UsersList.css";
 import HomePage from "../HomePage/HomePage";
 
-const UsersList = ({lists}) => {
+const UsersList = ({name,lists}) => {
     return(
         <div className="userslistdiv">
             <div>
-                <HomePage />
+                <HomePage name={name}/>
             </div>
             {lists.map((user,key) => (
                 <div class="card_testimonial">

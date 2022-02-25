@@ -111,7 +111,7 @@ const AddPlaceForm = (props) => {
 
         <div className="addplaceDiv">
             <div className="something">
-                <HomePage />
+                <HomePage name={props.name}/>
             </div>
             <div className="ADD_FORM">
                 <div className="headingform">

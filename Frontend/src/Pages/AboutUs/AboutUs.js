@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import "./AboutUs.css";
 import HomePage from "../HomePage/HomePage";
 
-const AboutUs = () => {
+const AboutUs = (props) => {
     return (
 
         <div className="aboutdiv">
 
             <div>
-                <HomePage />
+                <HomePage name={props.name}/>
             </div>
             <div>
             <section className="about mx-auto" id="about">
