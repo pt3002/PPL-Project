@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./UsersList.css";
 import HomePage from "../HomePage/HomePage";
 
-const UsersList = ({ lists }) => {
+const UsersList = ({ name, lists }) => {
     return (
         <div className="userslistdiv">
             <div>
