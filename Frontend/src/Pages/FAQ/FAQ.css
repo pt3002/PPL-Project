@@ -23,7 +23,7 @@ body {
 .containerofFAQ {
   margin: 0 auto;
   padding: 4rem;
-  width: 48rem;
+  width: 70rem;
 }
 
 .accordion .accordion-item {
@@ -103,6 +103,7 @@ body {
 .accordion .accordion-content {
   opacity: 0;
   max-height: 0;
+  
   overflow:scroll;
   transition: opacity 200ms linear, max-height 200ms linear;
   will-change: opacity, max-height;
@@ -114,4 +115,5 @@ body {
   font-size: 2rem;
   font-weight: 300;
   /* margin: 2em 0; */
+  padding: 1rem;
 }

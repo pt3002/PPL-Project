@@ -58,7 +58,7 @@ const AddPlaceForm = (props) => {
                 setprewurl("");
                 setfetchurl("");
                 document.getElementById("1").click();
-                document.getElementById("image").value="";
+                document.getElementById("image").value = "";
                 // console.log(fetchurl);
             }
         }
@@ -184,12 +184,15 @@ const AddPlaceForm = (props) => {
                             <label for="3">☆</label>
                             <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="2" id="2"></input>
                             <label for="2">☆</label>
-                            <input  type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="1" id="1"></input>
+                            <input type="radio" onClick={(e) => setrating(e.target.value)} name="rating" value="1" id="1"></input>
                             <label for="1">☆</label>
                         </div>
                         <div className="inputfield">
                             <label className="titleform" for="image" >Upload an image</label>
                             <input className="imageupload" id="image" onChange={pickhandler} type="file" name="myImage" accept=".jpg,.png,.jpeg" ></input>
+                        </div>
+                        <div className="imageAdd">
+                            <img src={prewurl} alt="no image" />
                         </div>
                         <div className="inputfield">
                             <label className="titleform" for="Description" >Description</label>
@@ -202,8 +205,6 @@ const AddPlaceForm = (props) => {
                     </form>
                 </div>
 
-                <img src={prewurl} alt="no image" />
-                
             </div>
 
             {/* <h1>{bestTime}</h1> */}

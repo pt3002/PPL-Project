@@ -71,3 +71,10 @@
     display: flex;
     justify-content: center;
 }
+.imageAdd{
+    margin: 10px;
+}
+.imageAdd img{
+    width: 200px;
+    height: 200px;
+}
