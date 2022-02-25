@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 .welcomediv{
     width:100vw;
     height: 100vh;
@@ -12,34 +12,6 @@
     display: flex;
 }
 
-.welcomeh1 h1{
-    width: 100vw;
-    display: flex;
-    color: black;
-    padding: 40px;
-    font-family: 'Quintessential', cursive;
-    font-size: 4rem;
-    letter-spacing: 2px;
-    justify-content: center;
-    align-items: center;
-    color: Navy; 
-    text-shadow: 1px 1px 2px mediumslateblue, 0 0 1em blue, 0 0 0.1em blue;
-}
-
-.welcomeh1 .welcomesub{
-    width: 100vw;
-    display: flex;
-    color: black;
-    padding: 20px;
-    font-family: 'Quintessential', cursive;
-    font-size: 3.5rem;
-    letter-spacing: 2px;
-    justify-content: center;
-    align-items: center;
-    color: Navy;
-    text-shadow: 1px 1px 2px mediumslateblue, 0 0 1em blue, 0 0 0.1em blue;
-}
-
 .welcomep {
     line-height: 25px;
     font-size: 5.5rem;
@@ -49,9 +21,9 @@
     font-weight: 700;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
-    color: #006400;
-    text-shadow: 1px 1px 2px LightYellow, 0 0 1em yellow, 0 0 0.1em lawngreen;
+    margin-top: 10%;
+    color: white;
+    text-shadow: 1px black;
 }
 
 .welcomeButton{
@@ -63,9 +35,26 @@
 }
 
 .welcomeButton button{
-    padding: 1.2rem 3.5rem;
+    margin: none;
     font-size: 2rem;
-    margin: 0 3rem;
+    outline: none;
+    border: none;
+    font-weight: 800;
+    -webkit-text-fill-color: transparent  ;
+    background: -moz-linear-gradient(90deg, #6F019C 0%, #C6017E 135.12%)  ;
+    background: linear-gradient(90deg, #6F019C 0%, #C6017E 135.12%)  ;
+    -webkit-background-clip: -webkit-text ;
+    -webkit-background-clip: text  ;
+
+}
+.whitebg{
+    background-color: #FFFFFF;
+    margin-left: 42px;
+    border-radius: 1000px;
+    outline: none;
+    width: 124px;
+    height: 55px;
+    text-align: center;
 }
 .welcomeh1 img{
     width: 100px;
