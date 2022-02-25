@@ -121,7 +121,6 @@ const HomePage = (props) => {
                     </div>
                 </div>
             </nav>
-            <h1>{props.name}</h1>
 
             {/* hero section  */}
 
