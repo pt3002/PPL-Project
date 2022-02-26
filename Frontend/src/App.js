@@ -19,6 +19,7 @@ import FilterCreator from './Pages/FilterPage/FilterCreator';
 import UserED from './Pages/UserED/UserED';
 import EditLocation from './Pages/EditLocation/EditLocation';
 import Editprofile from './Pages/EditProfile/Editprofile';
+import StartingPage from './Pages/StartingPage/StartingPage';
 
 const App = () => {
 
@@ -26,6 +27,7 @@ const App = () => {
   if (user!=undefined &&  user.name != undefined) {
     localStorage.setItem("name", user.name);
   }
+  
   //Users List
   const [lists, setLists] = useState([])
 
@@ -51,7 +53,7 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             {
-              user && user._id ? <HomePage name={user.name} setLoginUser={setLoginUser} /> : <WelcomePage />
+              user && user._id ? <StartingPage name={user.name} setLoginUser={setLoginUser} /> : <WelcomePage />
             }
           </Route>
           <Route path="/login">
@@ -60,6 +62,9 @@ const App = () => {
           </Route>
           <Route path="/signup" >
             <SignUpPage setLists={setLists} />
+          </Route>
+          <Route path="/startingpage">
+            <StartingPage name={user.name} />
           </Route>
           <Route path="/faq">
             <FAQ name={user.name} />

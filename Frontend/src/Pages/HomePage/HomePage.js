@@ -27,7 +27,7 @@ const HomePage = (props) => {
             <nav className="main-nav">
                 {/* 1st logo part  */}
                 <div className="logo">
-                <a href="#">
+                <a href="/startingPage">
                     <img src={pic} className="Logo-Travel"></img>
                 </a>
                 </div>
@@ -73,7 +73,7 @@ const HomePage = (props) => {
                         </li>
 
                         {/* profile user */}
-                        <li class="dropdown">
+                        <li className="dropdown">
                             <button className="btn dropdown-toggle" style={{ fontSize: 17 }} type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span className="mx-2">{localStorage.getItem("name")}</span><FaUser />
                             </button>

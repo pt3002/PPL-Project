@@ -30,24 +30,25 @@ const FAQ = (props) => {
           <h2>Frequently Asked Questions</h2>
           <div className="accordion">
             <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-1")} id="accordion-button-1" aria-expanded="false"><span className="accordion-title">Will masks be required during this tour?</span><span className="icon" aria-hidden="true"></span></button>
+              <button onClick={() => toggleAccordion("accordion-button-1")} id="accordion-button-1" aria-expanded="false"><span className="accordion-title">How can we search for places in this website?</span><span className="icon" aria-hidden="true"></span></button>
               <div className="accordion-content">
-                <p>Masks will be required in any place where they are required by the local government (in shops and in restaurants when not seated for a meal, for example), and any time we are unable to socially distance with each other (while traveling in the shuttle van, for example).
-                  There are still inherent risks with traveling while Covid-19 is considered a worldwide pandemic</p>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-2")} id="accordion-button-2" aria-expanded="false"><span className="accordion-title">What clothing should I pack for one of your adventures?</span><span className="icon" aria-hidden="true"></span></button>
-              <div className="accordion-content">
-                <p>We always recommend packing as light as possible however the specific requirements for your tour will vary widely depending on where and when you are traveling.
+                <p>List of all the Places is available in the List of Places Navbar Link. In case you want to filter
+                     your search then you can filter the places according to rating, price and creator using the Filter
+                     Dropdown in the NavBar.
                 </p>
               </div>
             </div>
             <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-3")} id="accordion-button-3" aria-expanded="false"><span className="accordion-title">Should I know Local Language?</span><span className="icon" aria-hidden="true"></span></button>
+              <button onClick={() => toggleAccordion("accordion-button-2")} id="accordion-button-2" aria-expanded="false"><span className="accordion-title">Can anyone add his/ her experience about a place ?</span><span className="icon" aria-hidden="true"></span></button>
               <div className="accordion-content">
-                <p>Learn Common Phrases of the Local Language
-                  A simple “Please,” “Thank you,” and “I'm sorry” in the local language goes a long way.</p>
+                <p>Yes, any registered user can add his/ her experience about a particular place on our website.
+                </p>
+              </div>
+            </div>
+            <div className="accordion-item">
+              <button onClick={() => toggleAccordion("accordion-button-3")} id="accordion-button-3" aria-expanded="false"><span className="accordion-title">Can anyone edit/ delete a place from this website?</span><span className="icon" aria-hidden="true"></span></button>
+              <div className="accordion-content">
+                <p>No, only the person who has created that particular place has these rights.</p>
               </div>
             </div>
             <div className="accordion-item">
@@ -61,14 +62,6 @@ const FAQ = (props) => {
                   </ul>
                 </p>
 
-              </div>
-            </div>
-            <div className="accordion-item">
-              <button onClick={() => toggleAccordion("accordion-button-5")} id="accordion-button-5" aria-expanded="false"><span className="accordion-title">Are Vaccinations Required?</span><span className="icon" aria-hidden="true"></span></button>
-              <div className="accordion-content">
-                <p>
-                  You must have a certificate. We do encourage all travelers to be current on routine immunizations.
-                </p>
               </div>
             </div>
           </div>
