@@ -11,11 +11,12 @@ app.use(express.urlencoded())
 app.use(cors())
 var fs = require('fs');
 var path = require('path');
+require("dotenv").config();
 
 app.use("/upload/images", express.static(path.join("upload", "images")))
 
 
-mongoose.connect("mongodb://localhost:27017/PPL_backend", {
+mongoose.connect("mongodb+srv://PPL:PPL1234@cluster0.dva62.mongodb.net/PPL_backend?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, () => {
@@ -305,7 +306,7 @@ app.put("/editprofile/:id", async (req, res) => {
 
 })
 
-app.listen(9002, () => {
+app.listen(process.env.PORT || 9002, () => {
     console.log("BE started at port 9002")
 })
 
