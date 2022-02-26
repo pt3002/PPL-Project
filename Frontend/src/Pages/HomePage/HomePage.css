@@ -34,13 +34,13 @@ li {
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-.logo {
-  display: grid;
-  /* background-color: #3b5998; */
-  grid-column: 2/3;
-  justify-content: start;
-  align-items: center;
+.Logo-Travel{
+     width:120px;
+     height:90px;
+     margin-left: 80px;
 }
+
+
 
 .menu-link {
   grid-column: 3/4;

@@ -13,6 +13,7 @@ import {
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { NavLink } from "react-router-dom";
+import pic from "./Travel_Final_Logo.png";
 
 const HomePage = (props) => {
     console.log(props.name);
@@ -26,10 +27,9 @@ const HomePage = (props) => {
             <nav className="main-nav">
                 {/* 1st logo part  */}
                 <div className="logo">
-                    <h2>
-                        <span>T</span>ravel
-                        <span>G</span>uide
-                    </h2>
+                <a href="#">
+                    <img src={pic} className="Logo-Travel"></img>
+                </a>
                 </div>
 
                 {/* 2nd menu part  */}
