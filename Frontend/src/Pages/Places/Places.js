@@ -13,7 +13,7 @@ const Places = ({ name,places }) => {
 
             {places.map((place, key) => (
                 <div className="card_testimonial">
-                    <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
+                    <div className="imagecontainer" class="img-container_testimonial"> <img src={`https://travelarena.herokuapp.com/${place.image}`} alt="no image" className="imageClass" /></div>
                     <div class="card-content_testimonial">
                         <h1> {place.title}</h1>
                         <h2>Best Time to travel : {place.besttimetotravel}</h2>

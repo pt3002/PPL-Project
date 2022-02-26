@@ -22,7 +22,7 @@ const LoginPage = ({ setLoginUser }) => {
     }
 
     const login_api = () => {
-        axios.post("http://localhost:9002/login", user)
+        axios.post("https://travelarena.herokuapp.com/login", user)
             .then(res => {
                 alert(res.data.message)
                 setLoginUser(res.data.user)

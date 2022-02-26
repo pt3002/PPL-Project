@@ -37,7 +37,7 @@ const AddPlaceForm = (props) => {
             // for (var key of formdata.entries()) {
             // 	console.log(key[0] + ', ' + key[1])
             // }
-            let url = "http://localhost:9002/addlocationdetails";
+            let url = "https://travelarena.herokuapp.com/addlocationdetails";
             let response = await fetch(url, {
                 method: 'POST',
                 body: formdata
@@ -100,7 +100,7 @@ const AddPlaceForm = (props) => {
     }
 
     const placeadded = () => {
-        axios.get('http://localhost:9002/places')
+        axios.get('https://travelarena.herokuapp.com/places')
             .then(res => setPlaces(res.data))
             .catch(error => console.log(error))
             ;

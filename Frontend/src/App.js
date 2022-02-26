@@ -35,14 +35,14 @@ const App = () => {
   const [places, setPlaces] = useState([])
   //Axios for User list
   useEffect(() => {
-    axios.get('http://localhost:9002/userslist')
+    axios.get('https://travelarena.herokuapp.com/userslist')
       .then(res => setLists(res.data))
       .catch(error => console.log(error));
   }, [])
 
   //Axios for List of places
   useEffect(() => {
-    axios.get('http://localhost:9002/places')
+    axios.get('https://travelarena.herokuapp.com/places')
       .then(res => setPlaces(res.data))
       .catch(error => console.log(error));
   }, [])

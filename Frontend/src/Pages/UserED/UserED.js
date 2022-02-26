@@ -10,7 +10,7 @@ const UserED = (props) => {
     const [places, setplaces] = useState([]);
     useEffect(() => {
         let name = localStorage.getItem("name");
-        axios.get(`http://localhost:9002/places/${name}`)
+        axios.get(`https://travelarena.herokuapp.com/${name}`)
             .then(res => setplaces(res.data))
             .catch(error => console.log(error));
     }, [])
@@ -18,7 +18,7 @@ const UserED = (props) => {
 
     const Deletelocation = (id) => {
         console.log(id);
-        axios.delete(`http://localhost:9002/deletelocation/${id}`)
+        axios.delete(`https://travelarena.herokuapp.com/deletelocation/${id}`)
             .then(res => console.log("deleted"))
             .catch(error => console.log(error));
         window.location.reload(false)
@@ -43,7 +43,7 @@ const UserED = (props) => {
                     if (place.name) {
                         return (
                             <div className="card_testimonial">
-                                <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
+                                <div className="imagecontainer" class="img-container_testimonial"> <img src={`https://travelarena.herokuapp.com/${place.image}`} alt="no image" className="imageClass" /></div>
                                 <div class="card-content_testimonial">
                                     <h1>Title : {place.title}</h1>
                                     <h2>Best Time to travel : {place.besttimetotravel}</h2>

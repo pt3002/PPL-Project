@@ -9,7 +9,7 @@ const Editprofile = (props) => {
     const history = useHistory()
     let name=localStorage.getItem("name");
     const getuseretails=async()=>{
-        let url=`http://localhost:9002/getuser/${name}`;
+        let url=`https://travelarena.herokuapp.com/getuser/${name}`;
         let response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -36,7 +36,7 @@ const Editprofile = (props) => {
         })
     }
     const editprofile=async(e)=>{
-        let url=`http://localhost:9002/editprofile/${user._id}`;
+        let url=`https://travelarena.herokuapp.com/editprofile/${user._id}`;
         delete user._id;
         let response = await fetch(url, {
           method: 'PUT',

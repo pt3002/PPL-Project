@@ -38,7 +38,7 @@ const SignUpPage = (props) => {
              return;
         }
         if (name && email && password && (password === reEnterpassword) && stay && description && contactno && interests) {
-            axios.post("http://localhost:9002/signup", user)
+            axios.post("https://travelarena.herokuapp.com/signup", user)
                 .then(res => alert(res.data.message))
             userupdated();
             history.push("/login")
@@ -49,7 +49,7 @@ const SignUpPage = (props) => {
 
     }
     const userupdated = () => {
-        axios.get('http://localhost:9002/userslist')
+        axios.get('https://travelarena.herokuapp.com/userslist')
             .then(res => setLists(res.data))
             .catch(error => console.log(error));
         console.log("userupdatedcalled");

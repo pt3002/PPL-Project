@@ -10,7 +10,7 @@ const EditLocation = () => {
     const id=window.location.pathname.split("/")[2];
     // console.log(id);
     const getlocationdetails=async()=>{
-        let url=`http://localhost:9002/getlocation/${id}`;
+        let url=`https://travelarena.herokuapp.com/getlocation/${id}`;
         let response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -34,7 +34,7 @@ const EditLocation = () => {
         formdata.append("besttimetotravel", bestTime);
         formdata.append("rating", rating);
         formdata.append("image", file);
-        let url = `http://localhost:9002/editlocation/${id}`;
+        let url = `https://travelarena.herokuapp.com/editlocation/${id}`;
         let response = await fetch(url, {
             method: 'PUT',
             body: formdata
@@ -226,7 +226,7 @@ const EditLocation = () => {
               <button className="Buttonform" type="submit" onClick={editlocationupdation}>Submit</button>
           </form>
       </div>
-      <img src={prewurl!=="" ? prewurl: `http://localhost:9002/${locationdetails.image}`} alt="no image" />
+      <img src={prewurl!=="" ? prewurl: `https://travelarena.herokuapp.com/${locationdetails.image}`} alt="no image" />
   </div>
 
   { <h1>{bestTime}</h1> }
