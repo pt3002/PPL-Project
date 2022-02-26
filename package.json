@@ -3,8 +3,7 @@
     "start": "nodemon Backend/index",
     "server": "nodemon Backend/index",
     "client": "npm start --prefix Frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
