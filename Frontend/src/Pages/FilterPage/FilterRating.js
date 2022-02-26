@@ -22,10 +22,10 @@ const FilterRating = (props) => {
                 <button className="btn btn-large btn-dark" onClick={(e) => setRating(e.target.value)} value="3">3 and Up</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setRating(e.target.value)} value="4">4 and Up</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setRating(e.target.value)} value="5">5</button>
-                {rating != '' &&
-                    <Filter category={"rating"} rating={rating} name={props.name}/>
-                }
             </div>
+            {rating != '' &&
+                    <Filter category={"rating"} rating={rating} name={props.name}/>
+               }
         </div>
     )
 }

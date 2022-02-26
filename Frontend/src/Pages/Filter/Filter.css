@@ -2,6 +2,16 @@
     width:100vw;
 }
 
+.NoData{
+    width: 100vw;
+    margin: 2% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quintessential';
+    font-size: 30px;
+}
+
 .card_testimonial {
   background-color: #fff;
   max-width: 800px;

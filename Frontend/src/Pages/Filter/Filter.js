@@ -93,7 +93,8 @@ const Filter = (props) => {
         if (props.price === "20000") {
             return (
                 <div>
-                    {under20k.map((place, key) => (
+                    {under20k.length>0 ? 
+                    under20k.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -105,7 +106,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )) : <div className="NoData">No Data Available</div> }
                 </div>
             )
         }
@@ -113,7 +114,8 @@ const Filter = (props) => {
         else if (props.price === "40000") {
             return (
                 <div>
-                    {p2040k.map((place, key) => (
+                    {p2040k.length>0 ?
+                    p2040k.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -125,7 +127,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }
@@ -133,7 +135,8 @@ const Filter = (props) => {
         else if (props.price === "60000") {
             return (
                 <div>
-                    {p4060k.map((place, key) => (
+                    {p4060k.length > 0 ?
+                    p4060k.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -145,7 +148,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }
@@ -153,7 +156,8 @@ const Filter = (props) => {
         else if (props.price === "100000") {
             return (
                 <div>
-                    {p60100k.map((place, key) => (
+                    {p60100k.length > 0 ?
+                    p60100k.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -165,7 +169,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }
@@ -173,7 +177,8 @@ const Filter = (props) => {
         else if (props.price === "500000") {
             return (
                 <div>
-                    {above100k.map((place, key) => (
+                    {above100k.length>0 ?
+                    above100k.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -185,7 +190,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }
@@ -194,7 +199,8 @@ const Filter = (props) => {
         if (props.rating === "1") {
             return (
                 <div>
-                    {rating1.map((place, key) => (
+                    {rating1.length > 0 ?
+                    rating1.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -206,14 +212,15 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }
         else if (props.rating === "2") {
             return (
                 <div>
-                    {rating2.map((place, key) => (
+                    {rating2.length > 0 ?
+                    rating2.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -225,7 +232,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }
@@ -233,7 +240,8 @@ const Filter = (props) => {
         else if (props.rating === "3") {
             return (
                 <div>
-                    {rating3.map((place, key) => (
+                    {rating3.length > 0 ?
+                    rating3.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -245,7 +253,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }
@@ -253,7 +261,8 @@ const Filter = (props) => {
         else if (props.rating === "4") {
             return (
                 <div>
-                    {rating4.map((place, key) => (
+                    {rating4.length > 0 ?
+                    rating4.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -265,7 +274,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }
@@ -273,7 +282,8 @@ const Filter = (props) => {
         else if (props.rating === "5") {
             return (
                 <div>
-                    {rating5.map((place, key) => (
+                    {rating5.length > 0 ?
+                    rating5.map((place, key) => (
                         <div class="card_testimonial">
                             <div className="imagecontainer" class="img-container_testimonial"> <img src={`http://localhost:9002/${place.image}`} alt="no image" className="imageClass" /></div>
                             <div class="card-content_testimonial">
@@ -285,7 +295,7 @@ const Filter = (props) => {
                                 <p class="author_testimonial">Price : {place.price}</p>
                             </div>
                         </div>
-                    ))}
+                    )): <div className="NoData">No Data Available</div>}
                 </div>
             )
         }

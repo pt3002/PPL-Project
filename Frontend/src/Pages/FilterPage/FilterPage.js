@@ -22,10 +22,10 @@ const FilterPage = (props) => {
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="60000">40k - 60k</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="100000">60k - 100k</button>
                 <button className="btn btn-large btn-dark" onClick={(e) => setEstimatedCost(e.target.value)} value="500000">Over 100k</button>
-                {cost != '' &&
-                    <Filter category={"price"} price={cost} name={props.name}/>
-                }
             </div>
+            {cost != '' &&
+                    <Filter category={"price"} price={cost} name={props.name}/>
+          }
         </div>
     )
 }
