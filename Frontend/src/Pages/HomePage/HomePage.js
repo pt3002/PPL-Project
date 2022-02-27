@@ -49,9 +49,9 @@ const HomePage = (props) => {
                             </button>
 
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterpage">Price</a>
-                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filterrating">Rating</a>
-                                <a className="dropdown-item" style={{ fontSize: 17 }} href="/filtercreator">Creator</a>
+                                <NavLink className="dropdown-item" style={{ fontSize: 17 }} to="/filterpage">Price</NavLink>
+                                <NavLink className="dropdown-item" style={{ fontSize: 17 }} to="/filterrating">Rating</NavLink>
+                                <NavLink className="dropdown-item" style={{ fontSize: 17 }} to="/filtercreator">Creator</NavLink>
                             </div>
                         </li>
                         {/* add place */}
