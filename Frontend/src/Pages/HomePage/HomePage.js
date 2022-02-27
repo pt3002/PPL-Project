@@ -92,7 +92,7 @@ const HomePage = (props) => {
                     <ul className="social-media-desktop">
                         <li>
                             <a
-                                href="#"
+                                href="https://www.facebook.com/"
                                 target="##">
                                 <FaFacebookSquare className="facebook" />
                             </a>
