@@ -79,7 +79,8 @@ Website Page
 Aboutus Page
 ![AboutUsPage](https://user-images.githubusercontent.com/87142754/155875348-9f830ed8-90a6-4bc5-bb6e-e0a120b8432a.jpeg)
 FAQ Page
-
+![FAQPage](https://user-images.githubusercontent.com/87142754/155875447-ce6f12c3-c896-4db4-b3b9-4027aa6ca75b.jpeg)
+For Looking at other features <a href="https://travelarena.netlify.app/">Sign up</a> to our website.
 
 ## Team 
 1. [112003112 - Siddhesh Pawar](https://github.com/Siddhesh4501)
