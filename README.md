@@ -68,8 +68,15 @@ Nurtured from the seed of a single great idea - to empower the traveller – Tra
     ```
         
 ## Screenshots
-
-
+Starting Page
+![StartingPage](https://user-images.githubusercontent.com/87142754/155875013-7178f6bb-e3e2-4f20-a680-d2c0519318ae.png)
+Sign-up Page
+![SignUpPage](https://user-images.githubusercontent.com/87142754/155875025-1084eaee-2882-4782-b8f4-d08d34fba008.png)
+Login Page
+![LoginPage](https://user-images.githubusercontent.com/87142754/155875040-4c69a8ed-33a9-46e3-83f5-2c224168e0f4.png)
+Website Page
+![WebsitePage](https://user-images.githubusercontent.com/87142754/155875052-c7868962-31c9-4990-adea-4d9bdb307c77.png)
+Aboutus Page
 
 ## Team 
 1. [112003112 - Siddhesh Pawar](https://github.com/Siddhesh4501)
