@@ -68,18 +68,20 @@ Nurtured from the seed of a single great idea - to empower the traveller – Tra
     ```
         
 ## Screenshots
-Starting Page
+  - ### Starting Page
 ![StartingPage](https://user-images.githubusercontent.com/87142754/155875013-7178f6bb-e3e2-4f20-a680-d2c0519318ae.png)
-Sign-up Page
+  - ### Sign-up Page
 ![SignUpPage](https://user-images.githubusercontent.com/87142754/155875025-1084eaee-2882-4782-b8f4-d08d34fba008.png)
-Login Page
+  - ### Login Page
 ![LoginPage](https://user-images.githubusercontent.com/87142754/155875040-4c69a8ed-33a9-46e3-83f5-2c224168e0f4.png)
-Website Page
+  - ### Landing Page
 ![WebsitePage](https://user-images.githubusercontent.com/87142754/155875052-c7868962-31c9-4990-adea-4d9bdb307c77.png)
-Aboutus Page
+  - ### Aboutus Page
 ![AboutUsPage](https://user-images.githubusercontent.com/87142754/155875348-9f830ed8-90a6-4bc5-bb6e-e0a120b8432a.jpeg)
-FAQ Page
+  - ### FAQ Page
 ![FAQPage](https://user-images.githubusercontent.com/87142754/155875447-ce6f12c3-c896-4db4-b3b9-4027aa6ca75b.jpeg)
+
+
 For Looking at other features <a href="https://travelarena.netlify.app/">Sign up</a> to our website.
 
 ## Team 
