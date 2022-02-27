@@ -77,6 +77,9 @@ Login Page
 Website Page
 ![WebsitePage](https://user-images.githubusercontent.com/87142754/155875052-c7868962-31c9-4990-adea-4d9bdb307c77.png)
 Aboutus Page
+![AboutUsPage](https://user-images.githubusercontent.com/87142754/155875348-9f830ed8-90a6-4bc5-bb6e-e0a120b8432a.jpeg)
+FAQ Page
+
 
 ## Team 
 1. [112003112 - Siddhesh Pawar](https://github.com/Siddhesh4501)
