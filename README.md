@@ -77,7 +77,7 @@ Nurtured from the seed of a single great idea - to empower the traveller – Tra
   - ### Landing Page
 ![WebsitePage](https://user-images.githubusercontent.com/87142754/155875052-c7868962-31c9-4990-adea-4d9bdb307c77.png)
   - ### Aboutus Page
-![AboutUsPage](https://user-images.githubusercontent.com/87142754/155875348-9f830ed8-90a6-4bc5-bb6e-e0a120b8432a.jpeg)
+![AboutUsPage](Screenshots/AboutUs.jpeg)
   - ### FAQ Page
 ![FAQPage](https://user-images.githubusercontent.com/87142754/155875447-ce6f12c3-c896-4db4-b3b9-4027aa6ca75b.jpeg)
 
