@@ -4,13 +4,16 @@
     <img src="https://github.com/pt3002/PPL-Project/blob/main/Travel_Final_Logo.png" alt="Logo" width="420" height="420">
   </a>
 </p>
-
+<p align="center">
+    <a href="https://travelarena.netlify.app/">Click here to view demo</a>
+</p>
                                                                                                                 
 ## Table of Contents
 
 * [About the Project](#about-the-project)
   * [Central Idea](#central-idea)
   * [Built With](#built-with)
+  * [Hosted With](#hosted-with)
 * [Getting Started](#getting-started)
   * [Installation](#installation)
 * [Screenshots](#screenshots)
@@ -31,6 +34,21 @@ Nurtured from the seed of a single great idea - to empower the traveller – Tra
 <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/>
 </p>
 
+## Hosted With
+<p float = "left">
+ <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"/>
+ <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"/>
+</p>
+<p>
+  Backend is hosted on heroku whereas Frontend is hosted on Netlify
+</p>
+<p>
+  <a href="https://travelarena.netlify.app/">Website Demo</a>
+</p>
+<p>
+  Backend is stored on MongoDB Atlas AWS Cloud
+</p>
+
 ## Getting Started
 
 ### Requirements
@@ -39,28 +57,15 @@ Nurtured from the seed of a single great idea - to empower the traveller – Tra
 * MongoDB
 
 ### Installation
-* Clone the repository : 
-```sh 
-https://github.com/pt3002/PPL-Project.git
-```
-* Frontend :
-    * At project root, change the directory to Frontned and then run
-        ```sh
-        npm i
-        ```
-    * To start the frontend, run
-        ```sh
-        npm start
-        ```
-* Backend :
-    * At project root, change the directory to Backend and then run
-        ```sh
-        npm i
-        ```
-    * To start the backend, run
-        ```sh
-        node index.js
-        ```
+* To run the project on your Localhost :
+    * Clone the repository : 
+    ```sh 
+    https://github.com/pt3002/PPL-Project.git
+    ```
+    * At the project root run : 
+    ```sh 
+    npm run dev
+    ```
         
 ## Screenshots
 
