@@ -10,25 +10,19 @@ const UserED = (props) => {
     const [places, setplaces] = useState([]);
     useEffect(() => {
         let name = localStorage.getItem("name");
-        axios.get(`https://travelarena.herokuapp.com/${name}`)
+        axios.get(`https://travelarena.herokuapp.com/places/${name}`)
             .then(res => setplaces(res.data))
             .catch(error => console.log(error));
     }, [])
-    console.log(places)
 
     const Deletelocation = (id) => {
         console.log(id);
+        console.log("we are in delete")
         axios.delete(`https://travelarena.herokuapp.com/deletelocation/${id}`)
-            .then(res => console.log("deleted"))
+            .then(res => window.location.reload(false))
             .catch(error => console.log(error));
-        window.location.reload(false)
+         
     }
-    // const Editlocation=(id)=>{
-    //     console.log(id);
-    //     axios.put(`http://localhost:9002/deletelocation/${id}`)
-    //       .then(res => console.log("edited"))
-    //       .catch(error => console.log(error));
-    // }
     const gotoeditpage = (id) => {
         history.push(`/editlocation/${id}`)
     }

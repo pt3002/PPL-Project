@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import HomePage from "../HomePage/HomePage";
 
 const EditLocation = () => {
-    // console.log("hello")
+    console.log("hello");
     let locationplace;
     const [locationdetails, setlocationdetails] = useState([]);
     const id=window.location.pathname.split("/")[2];
@@ -18,6 +18,7 @@ const EditLocation = () => {
             },
         });
         locationplace=await response.json(); 
+        console.log(locationplace);
         setlocationdetails(locationplace);
     }
 
