@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Component } from "react";
-import travelGif from './travel.gif'
 import "./StartingPage.css";
 import HomePage from "../HomePage/HomePage";
 import quotes from './Quotes';
@@ -41,14 +40,15 @@ export default class App extends Component {
         <div>
           <HomePage />
         </div>
-        <div>
-          <h1>Random Quote</h1>
-          <QuoteAndAuthor
-            generateRandomQuote={this.generateRandomQuote}
-            quote={this.state}
-          />
+        <div className="bgStartingPage">
+          <div className="quote"><h1 className="quote-of-the-day">Quote of the day</h1></div>
+          <div className="quote">
+            <QuoteAndAuthor
+              generateRandomQuote={this.generateRandomQuote}
+              quote={this.state}
+            />
+          </div>
         </div>
-        <img src={travelGif} alt="loading..." />
       </div>
     )
   }

@@ -1,4 +1,61 @@
-.startingpagediv{
+
+.bgStartingPage{
      width:100vw;
+     height: 100vh;
+    background-image: url("./travel.gif") ;
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    background-position: center;
+    background-size: 1420px;
  }
 
+ .quote{
+     display: flex;
+     justify-content: center;
+     margin-top: 2em;
+ }
+
+ .quote-of-the-day{
+     color: white;
+     font-size: 42px;
+     font-weight: 800;
+    text-shadow: 1px black;
+
+ }
+
+ .quote-button{
+    margin: none;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+    font-weight: 800;
+    -webkit-text-fill-color: transparent  ;
+    background: -moz-linear-gradient(90deg, #6F019C 0%, #C6017E 135.12%)  ;
+    background: linear-gradient(90deg, #6F019C 0%, #C6017E 135.12%)  ;
+    -webkit-background-clip: -webkit-text ;
+    -webkit-background-clip: text  ;
+ }
+
+ .quote-author {
+    display: flex;
+     justify-content: center;
+    color: white;
+    font-size: 30px;
+
+ }
+
+ .centering{
+     display: flex;
+     justify-content: center;
+ }
+
+ .quote-button-div{
+    background-color: #FFFFFF;
+    display: flex;  
+    justify-content: center;  
+    align-items: center; 
+    border-radius: 1000px;
+    outline: none;
+    text-align: center;
+    width: max-content;
+ }
