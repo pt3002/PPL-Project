@@ -21,12 +21,19 @@
   background-size: cover;
   background-position: center center;
 }
-.imageClass{
-  width: 230px;
-  height: 280px;
+.imageClass1{
+  width: 240px;
+  height: 260px;
+  margin: 0 auto;
 }
-.imagecontainer{
-  padding: 0px 15px;
+.imagecontainer1{
+  
+  width: 230px;
+  max-height: 150px;
+  grid-column: 2;
+  /* background-color: #c1b7b4; */
+  background-size: cover;
+  background-position: center center;
 }
 .card-content_testimonial {
   grid-column: 3 / 5;

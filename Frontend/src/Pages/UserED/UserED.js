@@ -21,7 +21,7 @@ const UserED = (props) => {
         axios.delete(`https://travelarena.herokuapp.com/deletelocation/${id}`)
             .then(res => window.location.reload(false))
             .catch(error => console.log(error));
-         
+
     }
     const gotoeditpage = (id) => {
         history.push(`/editlocation/${id}`)
@@ -30,7 +30,7 @@ const UserED = (props) => {
     return (
         <div className="filterpagediv">
             <div>
-                <HomePage name={props.name}/>
+                <HomePage name={props.name} />
             </div>
             {places.map((place, key) => (
                 (() => {
